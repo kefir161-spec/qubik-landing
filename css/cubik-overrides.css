@@ -31,7 +31,7 @@ body.landing-cubik > .page {
 /* Мобильный hero — как cubik.one */
 @media only screen and (max-width: 1023px) {
     .landing-cubik .catalog_main .discover__slide {
-        min-height: 37.5rem;
+        min-height: min(100svh, 100dvh);
     }
 }
 
@@ -213,5 +213,81 @@ body.landing-cubik > .page {
 @media only screen and (max-width: 767px) {
     .landing-cubik .landing-contact-form__row {
         grid-template-columns: 1fr;
+    }
+}
+
+/* --- Мобильная адаптация: отступы секций (перебиваем cubik-styles) --- */
+@media (max-width: 767px) {
+    .landing-cubik .collections {
+        padding: clamp(2rem, 6vw, 2.75rem) var(--page-gutter) clamp(3rem, 8vw, 4rem) !important;
+        overflow-x: clip;
+        overflow-y: visible;
+    }
+
+    .landing-cubik .creativity {
+        padding-left: var(--page-gutter) !important;
+        padding-right: var(--page-gutter) !important;
+        padding-bottom: 0 !important;
+    }
+
+    .landing-cubik .creativity.pt-5 {
+        padding-top: clamp(2rem, 6vw, 3rem) !important;
+    }
+
+    .landing-cubik .catalog__wrapper {
+        padding-left: var(--page-gutter) !important;
+        padding-right: var(--page-gutter) !important;
+    }
+
+    .landing-cubik .catalog__wrapper.pt-5 {
+        padding-top: clamp(2rem, 6vw, 3rem) !important;
+    }
+
+    .landing-cubik .catalog__wrapper.pb-5 {
+        padding-bottom: clamp(2rem, 6vw, 3rem) !important;
+    }
+
+    .landing-cubik .details__box {
+        padding: clamp(2rem, 6vw, 3rem) var(--page-gutter) !important;
+    }
+
+    .landing-cubik .post {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .landing-cubik .collections__head .collections__title {
+        padding-right: 0 !important;
+    }
+
+    .landing-cubik .collections__box:nth-child(2) {
+        margin-left: 0.75rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .landing-cubik .collections__details {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.35rem;
+    }
+
+    .landing-cubik .collections__box:nth-child(2) {
+        margin-left: 0;
+        text-align: left;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .landing-cubik .collections {
+        padding-left: clamp(1.5rem, 4vw, 2.5rem) !important;
+        padding-right: clamp(1.5rem, 4vw, 2.5rem) !important;
+    }
+
+    .landing-cubik .creativity,
+    .landing-cubik .catalog__wrapper,
+    .landing-cubik .details__box {
+        padding-left: clamp(1.5rem, 4vw, 2.5rem) !important;
+        padding-right: clamp(1.5rem, 4vw, 2.5rem) !important;
     }
 }

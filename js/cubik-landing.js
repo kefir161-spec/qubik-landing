@@ -18,6 +18,10 @@ function collectionSwiperOptions(root) {
         },
         watchOverflow: true,
         grabCursor: true,
+        touchRatio: 1,
+        touchAngle: 45,
+        resistanceRatio: 0.65,
+        longSwipesRatio: 0.35,
         navigation: {
             nextEl: section?.querySelector('.collections__nav .swiper-button-next') ?? null,
             prevEl: section?.querySelector('.collections__nav .swiper-button-prev') ?? null,

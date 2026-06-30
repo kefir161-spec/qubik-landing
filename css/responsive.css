@@ -127,7 +127,8 @@
 .landing-cubik .catalog_main .discover__slide {
     display: flex;
     align-items: flex-end;
-    min-height: calc(100vh - 6rem);
+    min-height: 100svh;
+    min-height: 100dvh;
     overflow: hidden;
     background: #f7fbfa;
 }
@@ -242,10 +243,18 @@
 }
 
 .landing-cubik .swiper-collections .swiper-slide {
-    width: 22.5rem;
+    width: var(--slide-product);
     padding: 0 1rem;
     height: auto;
     display: flex;
+}
+
+.landing-cubik #swiperFacets .swiper-slide {
+    width: var(--slide-facet);
+}
+
+.landing-cubik #swiperTestimonials .swiper-slide {
+    width: var(--slide-review);
 }
 
 .landing-cubik .collections__item {
@@ -310,7 +319,7 @@
 
 @media (max-width: 768px) {
     .landing-cubik .cb-hv {
-        padding: 80px 18px;
+        padding: clamp(12px, 3vw, 20px) var(--page-gutter);
     }
     .landing-cubik .cb-hv__frame {
         border-radius: 14px;
@@ -464,6 +473,151 @@
 
     .landing-cubik .sm-vision {
         display: block !important;
+    }
+
+    .landing-cubik .discover__slide > img {
+        object-position: 62% center;
+    }
+
+    .landing-cubik .discover_title_h2 {
+        font-size: clamp(1.5rem, 6.5vw, 2rem);
+        line-height: 1.05;
+        margin-top: 0;
+        margin-bottom: clamp(1rem, 4vw, 1.5rem);
+    }
+
+    .landing-cubik .discover_desc_mob {
+        font-size: clamp(0.9375rem, 3.8vw, 1.0625rem);
+        line-height: 1.45;
+        margin-bottom: clamp(1.5rem, 8vw, 2.5rem);
+    }
+
+    .landing-cubik .discover .button-large {
+        height: 3rem;
+        min-height: 48px;
+        font-size: 0.9375rem;
+    }
+
+    .landing-cubik .discover__cta-row {
+        --bs-gutter-x: 0.75rem;
+    }
+
+    .landing-cubik .collections__title.h1,
+    .landing-cubik .catalog__title.h1,
+    .landing-cubik .post__title.h1 {
+        font-size: clamp(1.75rem, 7vw, 2.35rem);
+        line-height: 1.05;
+    }
+
+    .landing-cubik .creativity__title.h2,
+    .landing-cubik .creativity__content h2 {
+        font-size: clamp(1.65rem, 6.5vw, 2.25rem);
+        margin-bottom: clamp(1rem, 4vw, 1.5rem);
+        text-align: left;
+    }
+
+    .landing-cubik .creativity__head {
+        text-align: left;
+    }
+
+    .landing-cubik .creativity__head > .mb-4 {
+        text-align: left;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .landing-cubik .creativity__content {
+        text-align: left;
+    }
+
+    .landing-cubik .creativity__content p {
+        margin-bottom: 1.25rem;
+    }
+
+    .landing-cubik .creativity__button {
+        width: 100%;
+        justify-content: center;
+        min-height: 48px;
+    }
+
+    .landing-cubik .catalog .p-5 {
+        padding: clamp(1.25rem, 4.5vw, 1.75rem) !important;
+    }
+
+    .landing-cubik .catalog .h4 {
+        font-size: clamp(1.05rem, 4.2vw, 1.2rem);
+    }
+
+    .landing-cubik .collections__head {
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .landing-cubik .collections__head .collections__title {
+        flex: 1 1 calc(100% - 6.5rem);
+        min-width: 0;
+    }
+
+    .landing-cubik .collections__nav {
+        flex-shrink: 0;
+    }
+
+    .landing-cubik .collections__nav.swiper .swiper-button-prev,
+    .landing-cubik .collections__nav.swiper .swiper-button-next {
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    .landing-cubik .collections__wrapper {
+        margin-left: calc(-1 * var(--page-gutter));
+        margin-right: calc(-1 * var(--page-gutter));
+    }
+
+    .landing-cubik .swiper-collections .swiper-slide {
+        padding: 0 0.5rem;
+    }
+
+    .landing-cubik .swiper-collections .swiper-slide:first-child {
+        padding-left: var(--page-gutter);
+    }
+
+    .landing-cubik .swiper-collections .swiper-slide:last-child {
+        padding-right: var(--page-gutter);
+    }
+
+    .landing-cubik .collections__subtitle {
+        font-size: clamp(0.9375rem, 3.6vw, 1.125rem);
+        line-height: 1.35;
+        word-break: break-word;
+    }
+
+    .landing-cubik .collections__price {
+        font-size: clamp(0.9375rem, 3.6vw, 1.125rem);
+        white-space: nowrap;
+    }
+
+    .landing-cubik .collections__details {
+        gap: 0.75rem;
+    }
+
+    .landing-cubik .carousel__item {
+        padding: clamp(1rem, 4vw, 1.25rem);
+    }
+
+    .landing-cubik .landing-contact-form__submit {
+        align-self: stretch;
+        width: 100%;
+        min-height: 48px;
+    }
+
+    .landing-cubik .landing-contact-form input,
+    .landing-cubik .landing-contact-form textarea {
+        font-size: 16px;
+        padding-top: 0.875rem;
+        padding-bottom: 0.875rem;
     }
 
     .landing-cubik .header__navigation {
