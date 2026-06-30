@@ -1,0 +1,33 @@
+{
+  "modular-dining-set": {
+    "images": [
+      "assets/images/products/featured/modular-dining-set-1.webp",
+      "assets/images/products/featured/modular-dining-set-2.png"
+    ],
+    "galleryTotal": 2,
+    "cubiks": null
+  },
+  "urban-block-planter": {
+    "images": [
+      "assets/images/products/featured/urban-block-planter-1.webp"
+    ],
+    "galleryTotal": 1,
+    "cubiks": null
+  },
+  "hedgerow": {
+    "images": [
+      "assets/images/products/featured/hedgerow-1.webp",
+      "assets/images/products/featured/hedgerow-2.webp"
+    ],
+    "galleryTotal": 9,
+    "cubiks": "+7"
+  },
+  "planter-bench-system": {
+    "images": [
+      "assets/images/products/featured/planter-bench-system-1.webp",
+      "assets/images/products/featured/planter-bench-system-2.webp"
+    ],
+    "galleryTotal": 3,
+    "cubiks": "+1"
+  }
+}

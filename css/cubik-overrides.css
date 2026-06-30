@@ -1,0 +1,217 @@
+/* Точечные фиксы: styles.css не должен ломать cubik-страницу */
+
+/* Сброс body/page из styles.css — hero с top: 0 */
+body.landing-cubik {
+    display: block;
+    margin: 0;
+    padding: 0;
+    font-family: Inter, sans-serif;
+    background: #f7fbfa;
+    color: #202025;
+    overflow-x: hidden;
+}
+
+body.landing-cubik > .page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.landing-cubik .discover.catalog_main {
+    margin: 0;
+    padding: 0;
+}
+
+.landing-cubik .discover__slide > img {
+    max-width: none;
+}
+
+/* Мобильный hero — как cubik.one */
+@media only screen and (max-width: 1023px) {
+    .landing-cubik .catalog_main .discover__slide {
+        min-height: 37.5rem;
+    }
+}
+
+.landing-cubik .how-card,
+.landing-cubik .catalog .p-5 {
+    opacity: 1;
+    transform: none;
+}
+
+/* Карусели collections — заголовок + стрелки в одной строке */
+.landing-cubik .collections {
+    position: relative;
+}
+
+.landing-cubik .collections__head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.landing-cubik .collections__head .collections__title {
+    margin-bottom: 0;
+    padding-right: 0;
+    flex: 1;
+    min-width: 0;
+}
+
+.landing-cubik .collections__nav {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-shrink: 0;
+    width: auto;
+    overflow: visible;
+}
+
+.landing-cubik .collections__nav.swiper .swiper-button-prev,
+.landing-cubik .collections__nav.swiper .swiper-button-next {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    margin: 0;
+    border-color: #e1e2e2;
+    background: #f7fbfa;
+}
+
+.landing-cubik .collections__nav.swiper .swiper-button-prev:hover,
+.landing-cubik .collections__nav.swiper .swiper-button-next:hover {
+    background: #202025;
+    border-color: #202025;
+}
+
+.landing-cubik .swiper-collections {
+    position: static;
+    overflow: visible;
+}
+
+.landing-cubik .collections__wrapper {
+    position: relative;
+    padding-bottom: 3rem;
+}
+
+.landing-cubik .swiper-collections .swiper-scrollbar.swiper-scrollbar-horizontal {
+    left: 50% !important;
+    right: auto !important;
+    bottom: 0.75rem !important;
+    width: min(16rem, 48vw) !important;
+    height: 2px !important;
+    transform: translateX(-50%) !important;
+    background: #e1e2e2 !important;
+    border-radius: 999px;
+    opacity: 1 !important;
+}
+
+.landing-cubik .swiper-collections .swiper-scrollbar-drag {
+    background: #202025 !important;
+    border: none !important;
+    border-radius: 999px;
+}
+
+@media only screen and (max-width: 1023px) {
+    .landing-cubik .collections__head {
+        margin-bottom: 2rem;
+    }
+
+    .landing-cubik .collections__wrapper {
+        padding-bottom: 2.5rem;
+    }
+
+    .landing-cubik .swiper-collections .swiper-scrollbar.swiper-scrollbar-horizontal {
+        left: 1.5rem !important;
+        right: 1.5rem !important;
+        width: auto !important;
+        transform: none !important;
+        bottom: 0.5rem !important;
+    }
+}
+
+/* Форма «Свяжитесь с нами» */
+.landing-cubik .landing-contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 100%;
+}
+
+.landing-cubik .landing-contact-form__row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.landing-cubik .landing-contact-form__field {
+    position: relative;
+    display: block;
+}
+
+.landing-cubik .landing-contact-form__field--full {
+    width: 100%;
+}
+
+.landing-cubik .landing-contact-form input,
+.landing-cubik .landing-contact-form textarea {
+    width: 100%;
+    box-sizing: border-box;
+    font: inherit;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #202025;
+    background: #fff;
+    border: 1px solid #e1e2e2;
+    border-radius: 0.75rem;
+    padding: 1rem 2rem 1rem 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.landing-cubik .landing-contact-form textarea {
+    min-height: 9rem;
+    resize: vertical;
+}
+
+.landing-cubik .landing-contact-form input::placeholder,
+.landing-cubik .landing-contact-form textarea::placeholder {
+    color: #8a8a8e;
+}
+
+.landing-cubik .landing-contact-form input:focus-visible,
+.landing-cubik .landing-contact-form textarea:focus-visible {
+    outline: none;
+    border-color: #0b8c5d;
+    box-shadow: 0 0 0 3px rgba(11, 140, 93, 0.12);
+}
+
+.landing-cubik .landing-contact-form__req {
+    position: absolute;
+    top: 0.85rem;
+    right: 0.85rem;
+    font-size: 0.875rem;
+    line-height: 1;
+    color: #202025;
+    pointer-events: none;
+}
+
+.landing-cubik .landing-contact-form__submit {
+    align-self: flex-start;
+    margin-top: 0.5rem;
+}
+
+.landing-cubik .landing-contact-form__status {
+    margin: 0;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    color: #0b8c5d;
+}
+
+@media only screen and (max-width: 767px) {
+    .landing-cubik .landing-contact-form__row {
+        grid-template-columns: 1fr;
+    }
+}

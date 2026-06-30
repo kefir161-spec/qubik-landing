@@ -1,0 +1,683 @@
+/* =============================================================================
+   Адаптивная вёрстка лендинга Cubik.one (RU)
+   Диапазон: 320px → 4K+ (2560px+)
+   ============================================================================= */
+
+.landing-cubik {
+    --page-max: 1320px;
+    --page-max-4k: 1680px;
+    --page-gutter: clamp(16px, 2.8vw, 56px);
+    --section-y: clamp(40px, 5.5vw, 88px);
+    --fluid-h1: clamp(1.65rem, 1.1rem + 2.4vw, 3.25rem);
+    --fluid-h2: clamp(1.35rem, 0.95rem + 1.6vw, 2.5rem);
+    --fluid-body: clamp(0.9375rem, 0.88rem + 0.25vw, 1.0625rem);
+    --slide-product: clamp(260px, 72vw, 340px);
+    --slide-facet: clamp(240px, 68vw, 320px);
+    --slide-review: clamp(280px, 86vw, 440px);
+    --header-h: 6rem;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+/* --- Контейнер: как на cubik.one — без max-width, секции сами задают padding --- */
+.landing-cubik .page__container {
+    width: 100%;
+    flex-grow: 1;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.landing-cubik .collections__title.h1,
+.landing-cubik .catalog__title.h1,
+.landing-cubik .post__title.h1 {
+    font-size: clamp(2.25rem, 3.2vw, 5rem);
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #202025;
+}
+
+.landing-cubik .discover__title.h1 {
+    font-size: 3rem;
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #f7fbfa;
+    max-width: none;
+    margin-bottom: 0;
+}
+
+.landing-cubik .creativity__title.h2 {
+    font-size: clamp(2rem, 3vw, 4rem);
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.landing-cubik .creativity__content h2 {
+    font-size: clamp(2rem, 3vw, 4rem);
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 2.5rem;
+}
+
+.landing-cubik .creativity__head > .mb-4,
+.landing-cubik .creativity__content p,
+.landing-cubik .catalog .p-5 p {
+    font-size: var(--fluid-body);
+    line-height: 1.55;
+}
+
+/* --- Шапка: на десктопе — cubik-styles, только z-index --- */
+.landing-cubik .header.header_new {
+    z-index: 200;
+}
+
+.landing-cubik .logo img {
+    height: auto;
+    width: auto;
+    max-height: 32px;
+}
+
+.landing-cubik .header__burger {
+    display: none;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.landing-cubik .header__burger::before,
+.landing-cubik .header__burger::after {
+    content: '';
+    position: absolute;
+    left: 9px;
+    right: 9px;
+    height: 2px;
+    background: #1d1d1f;
+    border-radius: 1px;
+    transition: transform 0.25s ease, top 0.25s ease, opacity 0.25s ease;
+}
+
+.landing-cubik .header__burger::before { top: 14px; }
+.landing-cubik .header__burger::after { top: 24px; }
+
+.landing-cubik .header__burger.open::before {
+    top: 19px;
+    transform: rotate(45deg);
+}
+.landing-cubik .header__burger.open::after {
+    top: 19px;
+    transform: rotate(-45deg);
+}
+
+/* --- Hero (discover) — как cubik.one, без боковых полей --- */
+.landing-cubik .discover.catalog_main {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+}
+
+.landing-cubik .catalog_main .discover__slide {
+    display: flex;
+    align-items: flex-end;
+    min-height: calc(100vh - 6rem);
+    overflow: hidden;
+    background: #f7fbfa;
+}
+
+.landing-cubik .discover__slide > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    object-fit: cover;
+    object-position: center center;
+}
+
+.landing-cubik .discover__row {
+    position: relative;
+    z-index: 2;
+    background: none;
+    padding: 5rem;
+}
+
+.landing-cubik .discover__details {
+    max-width: 41.5rem;
+}
+
+.landing-cubik .discover__head {
+    align-items: flex-end;
+    margin-bottom: 2.5rem;
+}
+
+.landing-cubik .discover__desc {
+    margin-top: 20px;
+    color: #f7fbfa;
+    font-size: 20px;
+    line-height: 1.4;
+    max-width: none;
+    margin-bottom: 0;
+}
+
+.landing-cubik .discover .button-land {
+    background: transparent;
+    border: 0.125rem solid #f7fbfa;
+    color: #f7fbfa;
+}
+
+.landing-cubik .discover .button-large {
+    height: 3.75rem;
+}
+
+@media only screen and (max-width: 1579px) {
+    .landing-cubik .discover__row {
+        padding: 4rem;
+    }
+    .landing-cubik .discover__details {
+        max-width: 37.5rem;
+        padding-right: 2.5rem;
+    }
+}
+
+@media only screen and (max-width: 1259px) {
+    .landing-cubik .discover__head {
+        align-items: flex-start;
+    }
+    .landing-cubik .discover__title.h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media only screen and (max-width: 1023px) {
+    .landing-cubik .discover__details {
+        max-width: 100%;
+        padding-right: 0;
+    }
+}
+
+/* --- Секции collections / creativity / catalog --- */
+.landing-cubik .collections__title {
+    text-align: left;
+}
+
+.landing-cubik .collections__head {
+    margin-bottom: 2.5rem;
+}
+
+@media only screen and (max-width: 1579px) {
+    .landing-cubik .collections__head {
+        margin-bottom: 2rem;
+    }
+}
+
+@media only screen and (max-width: 1023px) {
+    .landing-cubik .collections__head {
+        margin-bottom: 1.5rem;
+    }
+}
+
+.landing-cubik .collections__wrapper {
+    margin: 0 -1rem;
+}
+
+.landing-cubik .swiper-collections {
+    position: static;
+    overflow: visible;
+}
+
+/* стрелки — см. cubik-overrides.css (после responsive) */
+
+.landing-cubik .swiper-collections .swiper-wrapper {
+    align-items: stretch;
+}
+
+.landing-cubik .swiper-collections .swiper-slide {
+    width: 22.5rem;
+    padding: 0 1rem;
+    height: auto;
+    display: flex;
+}
+
+.landing-cubik .collections__item {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+    color: #202025;
+}
+
+.landing-cubik .collections__details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 1.5rem;
+}
+
+.landing-cubik .collections__box:nth-child(2) {
+    flex-shrink: 0;
+    margin-left: 1.25rem;
+    text-align: right;
+}
+
+/* --- Brand video (cb-hv) — как виджет cubik.one --- */
+.landing-cubik .cb-hv {
+    background: #fafaf8;
+    padding: 10px 22px;
+    box-sizing: border-box;
+}
+
+.landing-cubik .cb-hv__inner {
+    width: 100%;
+    max-width: min(960px, 100%);
+    margin: 0 auto;
+}
+
+.landing-cubik .cb-hv__frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: clamp(12px, 1.2vw, 20px) clamp(12px, 1.2vw, 20px) clamp(8px, 1vw, 14px) clamp(20px, 2vw, 32px);
+    overflow: hidden;
+    background: #000;
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.06) inset,
+        0 40px 100px rgba(0, 0, 0, 0.22),
+        0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+.landing-cubik .cb-hv__media,
+.landing-cubik .head-video-media {
+    position: absolute;
+    inset: 0;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .landing-cubik .cb-hv {
+        padding: 80px 18px;
+    }
+    .landing-cubik .cb-hv__frame {
+        border-radius: 14px;
+    }
+}
+
+.landing-cubik .creativity__head .mb-4 {
+    max-width: 49rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+/* --- 3D promo row: видео builder-plug как на cubik.one --- */
+.landing-cubik .creativity__video {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 2rem;
+    display: block;
+}
+
+/* --- Modular 3D block внутри creativity --- */
+.landing-cubik .creativity .section.modular-hero {
+    padding: clamp(16px, 2vw, 24px) 0 0;
+    max-width: none;
+    margin: 0;
+    width: 100%;
+}
+
+/* Сброс конфликтующих отступов из styles.css на cubik-странице */
+.landing-cubik .section {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: none;
+}
+
+.landing-cubik .modular-hero-stage {
+    margin-top: clamp(20px, 3vw, 40px);
+    padding: clamp(16px, 3vw, 44px);
+    border-radius: clamp(14px, 1.5vw, 22px);
+}
+
+.landing-cubik .modular-hero .modular-hero-title,
+.landing-cubik .creativity .creativity__title {
+    text-align: center;
+}
+
+/* --- Отзывы --- */
+.landing-cubik .carousel__item {
+    min-height: 100%;
+    box-sizing: border-box;
+    padding: clamp(16px, 2.5vw, 24px);
+}
+
+.landing-cubik .carousel__logo {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.landing-cubik .carousel__image {
+    width: clamp(52px, 12vw, 64px);
+    height: clamp(52px, 12vw, 64px);
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.landing-cubik .carousel__quote,
+.landing-cubik .carousel__item > .mb-4 {
+    font-size: var(--fluid-body);
+    line-height: 1.5;
+}
+
+/* --- FAQ / CTA / Contact --- */
+.landing-cubik .categories__head.h4 {
+    font-size: clamp(1rem, 0.92rem + 0.35vw, 1.125rem);
+    line-height: 1.35;
+    padding-right: 40px;
+}
+
+.landing-cubik .categories__body p {
+    font-size: var(--fluid-body);
+    line-height: 1.55;
+}
+
+.landing-cubik .details__box--cta .button-large {
+    width: 100%;
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.landing-cubik .details__box iframe {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    border: 0;
+}
+
+/* --- Footer --- */
+.landing-cubik .footer__body {
+    display: grid;
+    gap: clamp(24px, 4vw, 40px);
+    grid-template-columns: 1fr;
+}
+
+.landing-cubik .footer__group {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+
+.landing-cubik .footer__tagline {
+    font-size: var(--fluid-body);
+    line-height: 1.5;
+    max-width: 36ch;
+    margin-top: 12px;
+}
+
+/* =============================================================================
+   BREAKPOINTS
+   ============================================================================= */
+
+/* Мобильные: до 479px */
+@media (max-width: 479px) {
+    .landing-cubik {
+        --slide-product: min(82vw, 300px);
+        --slide-review: min(90vw, 320px);
+    }
+
+    .landing-cubik .discover__slide {
+        min-height: 37.5rem;
+    }
+
+    .landing-cubik .discover__row {
+        padding: 2.5rem 1.5rem;
+        background: none;
+    }
+}
+
+/* Планшет и узкий desktop: до 767px — мобильный hero (как cubik.one) */
+@media (max-width: 767px) {
+    .landing-cubik .sm-hidden {
+        display: none !important;
+    }
+
+    .landing-cubik .sm-vision {
+        display: block !important;
+    }
+
+    .landing-cubik .header__navigation {
+        display: none;
+        position: fixed;
+        top: var(--header-h);
+        left: 0;
+        right: 0;
+        bottom: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: rgba(255, 255, 255, 0.98);
+        padding: 16px var(--page-gutter) max(24px, env(safe-area-inset-bottom));
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        z-index: 199;
+    }
+
+    .landing-cubik .header__navigation.open {
+        display: flex !important;
+    }
+
+    .landing-cubik .header__navigation .header__link {
+        font-size: 17px;
+        padding: 14px 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        white-space: normal;
+    }
+
+    .landing-cubik .header__burger {
+        display: block;
+    }
+
+    .landing-cubik .discover .col-lg-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .landing-cubik .discover .mt-4 {
+        margin-top: 12px !important;
+    }
+
+    .landing-cubik .creativity .row > [class*='col-'] {
+        margin-bottom: 20px;
+    }
+
+    .landing-cubik .details__box--cta .col-lg-3 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+/* Планшет landscape / маленький laptop: 768–1023 */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .landing-cubik {
+        --slide-product: 300px;
+        --slide-facet: 280px;
+        --slide-review: 360px;
+    }
+
+    .landing-cubik .header__burger {
+        display: block;
+    }
+
+    .landing-cubik .header__navigation {
+        display: none;
+        position: fixed;
+        top: var(--header-h);
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: #fff;
+        padding: 20px var(--page-gutter) 28px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        z-index: 199;
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+    }
+
+    .landing-cubik .header__navigation.open {
+        display: flex !important;
+    }
+}
+
+/* Laptop: 1024–1439 */
+@media (min-width: 1024px) {
+    .landing-cubik {
+        --slide-product: 320px;
+        --slide-facet: 300px;
+        --slide-review: 400px;
+    }
+
+    .landing-cubik .header__burger {
+        display: none;
+    }
+
+    .landing-cubik .header__navigation {
+        display: flex !important;
+    }
+
+    .landing-cubik .footer__body {
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.4fr);
+        align-items: start;
+    }
+}
+
+/* Desktop wide: 1440–1919 */
+@media (min-width: 1440px) {
+    .landing-cubik {
+        --page-max: 1400px;
+        --slide-product: 340px;
+        --slide-facet: 320px;
+        --slide-review: 440px;
+    }
+
+    .landing-cubik .cb-hv__inner {
+        max-width: min(1100px, 100%);
+    }
+}
+
+/* Full HD+ / 2K: 1920–2559 */
+@media (min-width: 1920px) {
+    .landing-cubik {
+        --page-max: var(--page-max-4k);
+        --page-gutter: clamp(32px, 2vw, 72px);
+        --slide-product: 380px;
+        --slide-facet: 360px;
+        --slide-review: 480px;
+    }
+
+
+    .landing-cubik .modular-hero-stage {
+        max-width: 1400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .landing-cubik .cb-hv__inner {
+        max-width: min(1280px, 100%);
+    }
+}
+
+/* 4K и ultra-wide: 2560+ */
+@media (min-width: 2560px) {
+    .landing-cubik {
+        --page-max: 1840px;
+        --fluid-h1: clamp(2.5rem, 1.5rem + 1.2vw, 3.75rem);
+        --fluid-h2: clamp(2rem, 1.2rem + 0.8vw, 3rem);
+        --slide-product: 420px;
+        --slide-facet: 400px;
+        --slide-review: 520px;
+    }
+
+    .landing-cubik .modular-hero-stage {
+        max-width: 1600px;
+        padding: clamp(36px, 2vw, 56px);
+    }
+
+    .landing-cubik .modular-hero .hero-canvas-wrap,
+    .landing-cubik .modular-hero .modular-canvas-wrap {
+        max-height: min(680px, 42vh);
+    }
+}
+
+@media (max-width: 900px) {
+    .landing-cubik .modular-hero-stage {
+        margin-top: clamp(16px, 4vw, 32px);
+        padding: clamp(14px, 3.5vw, 22px);
+    }
+}
+@media (max-width: 359px) {
+    .landing-cubik {
+        --page-gutter: 14px;
+    }
+
+    .landing-cubik .discover_title_h2 {
+        font-size: 1.35rem;
+    }
+}
+
+/* Ландшафт на низких экранах */
+@media (max-height: 500px) and (orientation: landscape) and (min-width: 1024px) {
+    .landing-cubik .discover__slide > img {
+        max-height: 100vh;
+    }
+
+    .landing-cubik .discover__row {
+        padding-top: 2rem;
+        padding-bottom: 1.5rem;
+    }
+}
+
+/* Hover только на устройствах с мышью */
+@media (hover: hover) and (pointer: fine) {
+    .landing-cubik .header__link:hover {
+        opacity: 0.75;
+    }
+}
+
+/* Выравнивание подвала на широких экранах */
+@media (min-width: 1200px) {
+    .landing-cubik .footer .footer__body,
+    .landing-cubik .footer .footer__foot {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+        box-sizing: border-box;
+    }
+}
+
+/* Уважение к prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+    .landing-cubik .header__burger::before,
+    .landing-cubik .header__burger::after {
+        transition: none;
+    }
+}

@@ -1,217 +1,415 @@
 /**
- * Single source of truth for marketing copy on the landing (English).
- * Product URLs and prices mirror the in-repo catalog section.
+
+ * Контент лендинга (русский).
+
  */
 
+
+
 export const SITE = {
-    name: 'cubik.one',
-    tagline: 'Modular space, built by you.',
-    url: 'https://cubik.one/',
-    shopUrl: 'https://cubik.one/catalog/',
-    builderUrl: 'https://cubik.one/builder/',
+
+    name: 'Qubik',
+
+    url: 'https://qubik.one/',
+
+    shopUrl: 'https://qubik.one/catalog/',
+
+    builderUrl: 'https://qubik.one/builder/',
+
 };
+
+
 
 export const HOW_IT_WORKS = [
+
     {
-        step: '01',
-        title: 'Choose facets & layout',
-        body: 'Pick Bion, Void, Zen, Flora, or Zen/2—then arrange them in the 3D editor until the volume feels right for your space.',
+
+        title: 'Выберите готовое или соберите сами',
+
+        body: 'В каталоге — готовые проекты. Или откройте 3D-конструктор и соберите компоновку под свой размер и задачу.',
+
     },
+
     {
-        step: '02',
-        title: 'Snap together with clips',
-        body: 'Cubiks meet on a precise rhythm. Clips seat with a firm click so rows stay flat and corners stay honest.',
+
+        title: 'Соедините грани',
+
+        body: 'Грани стыкуются клипсами — без инструментов, сборка занимает минуты.',
+
     },
+
     {
-        step: '03',
-        title: 'Scale or re-stage anytime',
-        body: 'Add a column for height, widen a run for storage, or break a wall into two islands—modularity is the insurance policy.',
+
+        title: 'Меняйте, когда нужно',
+
+        body: 'Разберите, переставьте или добавьте модули — система растёт вместе с вашими планами.',
+
     },
+
 ];
 
-export const GALLERY_ITEMS = [
-    {
-        src: 'assets/images/banner/Garden/2.jpeg',
-        alt: 'Cubik modular system arranged as a lush garden partition',
-        title: 'Garden rooms',
-        caption: 'Vertical green without surrendering floor area—herbs close to the kitchen door.',
-    },
-    {
-        src: 'assets/images/banner/Interior/Image_202601231409.jpeg',
-        alt: 'Interior partition built from modular cubiks',
-        title: 'Interior rhythm',
-        caption: 'Soft daylight through lattice facets—privacy without a bunker wall.',
-    },
-    {
-        src: 'assets/images/banner/Pet%20house/photo_2026-03-26_13-29-32.jpg',
-        alt: 'Modular pet house with integrated perch',
-        title: 'Pet corners',
-        caption: 'A perch, a hideout, and a footprint you can resize when the cat expands the territory.',
-    },
-    {
-        src: 'assets/images/banner/Public%20space/1%20render%20%20(1).png',
-        alt: 'Public space installation with modular cubiks',
-        title: 'Public & retail',
-        caption: 'Readable modules for queues, signage niches, and quick seasonal re-skins.',
-    },
-    {
-        src: 'assets/images/products/modular-green-wall-planter/hover.jpeg',
-        alt: 'Living wall planter close-up',
-        title: 'Living walls',
-        caption: 'Flora facets let soil and irrigation live inside the grid—not bolted on as an afterthought.',
-    },
-    {
-        src: 'assets/images/products/modular-table/hover.png',
-        alt: 'Modular table surface detail',
-        title: 'Work & dine',
-        caption: 'Same clips as the wall system—new typology, familiar tolerances.',
-    },
-];
+
+
+/** Готовые решения — карточки с qubik.one */
 
 export const PRODUCTS = [
+
     {
-        name: 'Modular Green Wall Planter',
-        desc: 'A vertical living wall for kitchens, studios, and living spaces—herbs, ornamentals, and cascading greenery without giving up floor space.',
-        price: 'from €430',
-        imgMain: 'assets/images/products/modular-green-wall-planter/main.png',
-        imgHover: 'assets/images/products/modular-green-wall-planter/hover.jpeg',
-        href: 'https://cubik.one/catalog/planters-pots/modular-green-wall-planter/',
-        dark: false,
+
+        name: 'Журнальный столик',
+
+        price: '53 058 ₽',
+
+        href: 'https://qubik.one/catalog/guest-areas/table/',
+
+        images: [
+
+            'assets/images/products/featured/guest-table-1.webp',
+
+            'assets/images/products/featured/guest-table-2.webp',
+
+        ],
+
     },
+
     {
-        name: 'Modular cubik table',
-        desc: 'A sturdy table you build from cubiks—flat top, stable base, easy to resize for balcony, kitchen, or studio.',
-        price: 'from €260',
-        imgMain: 'assets/images/products/modular-table/main.png',
-        imgHover: 'assets/images/products/modular-table/hover.png',
-        href: 'https://cubik.one/catalog/',
-        dark: false,
+
+        name: 'Модульная клумба «Урбан»',
+
+        price: '57 000 ₽',
+
+        href: 'https://qubik.one/catalog/planters-pots/urban-block-planter/',
+
+        images: [
+
+            'assets/images/products/featured/urban-block-planter-1.webp',
+
+        ],
+
     },
+
     {
-        name: 'Balcony planter set #2',
-        desc: 'Compact modular planters tuned for narrow ledges—bold floral arrangements that still respect neighbors below.',
-        price: 'from €120',
-        imgMain: 'assets/images/products/balcony-planter-set-2/main.png',
-        imgHover: 'assets/images/products/balcony-planter-set-2/hover.png',
-        href: 'https://cubik.one/catalog/diy-kits/balcony-planter-set-2/',
-        dark: true,
+
+        name: 'Живая изгородь',
+
+        price: '96 389 ₽',
+
+        cubiks: '+6',
+
+        href: 'https://qubik.one/catalog/outdoors/hedgerow/',
+
+        images: [
+
+            'assets/images/products/featured/hedgerow-1.webp',
+
+            'assets/images/products/featured/hedgerow-2.webp',
+
+        ],
+
     },
+
     {
-        name: 'Cat Castle',
-        desc: 'Modular cat house with a lounging shelf—cozy, reconfigurable, and honest about weight when the zoomies hit.',
-        price: 'from €200',
-        imgMain: 'assets/images/products/cat-castle/main.jpeg',
-        imgHover: 'assets/images/products/cat-castle/hover.jpeg',
-        href: 'https://cubik.one/catalog/playrooms/cat-house-1/',
-        dark: false,
+
+        name: 'Городская зона отдыха',
+
+        price: '218 864 ₽',
+
+        href: 'https://qubik.one/catalog/public-spaces/planter-bench-system/',
+
+        images: [
+
+            'assets/images/products/featured/planter-bench-system-1.webp',
+
+            'assets/images/products/featured/planter-bench-system-2.webp',
+
+        ],
+
     },
+
 ];
+
+
+
+/** Четыре грани (без Flora) */
+
+export const FACET_PRODUCTS = [
+
+    {
+
+        name: 'Грань Zen/2, серая',
+
+        price: '205 ₽',
+
+        href: 'https://qubik.one/blocks/facet-zen/2-grey/',
+
+        images: ['assets/images/facets/zen2/facet.jpg'],
+
+    },
+
+    {
+
+        name: 'Грань Zen, серая',
+
+        price: '265 ₽',
+
+        href: 'https://qubik.one/blocks/zen-green/',
+
+        images: ['assets/images/facets/zen/facet.jpg'],
+
+    },
+
+    {
+
+        name: 'Грань Void, серая',
+
+        price: '205 ₽',
+
+        href: 'https://qubik.one/blocks/void-green/',
+
+        images: ['assets/images/facets/void/facet-izo.jpg'],
+
+    },
+
+    {
+
+        name: 'Грань Bion, серая',
+
+        price: '252 ₽',
+
+        href: 'https://qubik.one/blocks/bion-green/',
+
+        images: ['assets/images/facets/bion/facet-izo.jpg'],
+
+    },
+
+];
+
+
 
 export const FAQ_ITEMS = [
+
     {
-        q: 'What exactly is a “cubik”?',
-        a: 'A cubik is one volumetric cell in the system. Each face can be a different facet type (open lattice, solid relief, planter, etc.), so one module can do several jobs at once.',
+
+        q: 'Что показывает 3D-конструктор?',
+
+        a: 'Считает количество граней, общий вес, примерное время сборки и ориентировочную стоимость заказа. Сцену и расчёты можно сохранить — пригодится для согласования с командой или запроса коммерческого предложения.',
+
     },
+
     {
-        q: 'Do I need special tools to assemble?',
-        a: 'No proprietary tools—clips are part of the system and seat by hand. A soft mallet can help on tight runs, but everyday assembly is tool-light.',
+
+        q: 'Сколько времени занимает сборка?',
+
+        a: 'Зависит от размера проекта. В среднем один кубик собирается за 1,5–3 минуты. Небольшие конструкции — быстрее, крупные уличные объекты и длинные пролёты могут потребовать помощи второго человека.',
+
     },
+
     {
-        q: 'Can I leave cubiks outdoors year-round?',
-        a: 'The composite is specified for UV exposure and a wide temperature band. As with any outdoor product, drainage and local wind loads still matter—plan anchors accordingly.',
+
+        q: 'Насколько прочные получаются конструкции?',
+
+        a: 'При правильной сборке с клипсами и подходящими гранями система держит форму уверенно. Кубик Bion выдерживает до 1500 кг равномерной вертикальной нагрузки. Для улицы, длинных пролётов и нестандартных нагрузок закладывайте запас и продумывайте крепление.',
+
     },
+
     {
-        q: 'How do I decide between Bion, Void, and Zen?',
-        a: 'Bion favors airflow and dappled light. Void frames shelves and display. Zen gives privacy and a calm, sculptural surface—mix them when one side of a run needs to breathe and the other needs quiet.',
+
+        q: 'Можно ли ставить Cubik на улице?',
+
+        a: 'Да. Материал содержит УФ-стабилизаторы, переносит дождь, снег и мороз. Ниже −15 °C лучше обращаться аккуратнее и не бить по деталям. Для мытья подойдут обычные моющие средства или мойка высокого давления.',
+
     },
+
     {
-        q: 'Is the 3D editor the same as ordering?',
-        a: 'The editor is for exploration and layout. When you are ready, the shop flows guide SKU choices; shipping regions and lead times are confirmed at checkout.',
+
+        q: 'Что в комплекте и как доставляют?',
+
+        a: 'Отправляем в разобранном виде в прочных коробках: грани, клипсы, перчатки и пинцет для снятия клипсов. Стандартный заказ уходит за 1–3 рабочих дня. Срок доставки зависит от региона, после отгрузки пришлём трек-номер.',
+
     },
-    {
-        q: 'Can businesses specify larger runs?',
-        a: 'Yes—retail, hospitality, and workplace programs benefit from repeat modules. Share drawings or mood boards via the contact form and we will align on palette, facet mix, and timeline.',
-    },
+
 ];
 
-/** Файлы лежат в `assets/images/sucess stories/` (имя папки как у вас на диске). */
-function successStoriesAsset(fileName) {
-    return `assets/images/sucess stories/${encodeURIComponent(fileName)}`;
-}
 
-/** По одному фото на слайд карусели (featured + 4 карточки = 5 слайдов), без врезки «картинка в картинке». */
-export const SUCCESS_STORY_VISUALS = [
+
+export const TESTIMONIALS = [
+
     {
-        image: successStoriesAsset('73r29iphoto_2025-05-08_09-46-45 (2).jpg'),
-        alt: 'Outdoor modular installation with flowers on a deck',
+
+        company: 'ЭкоСевер',
+
+        quote: 'Поставили зелёную модульную зону у ресепшена — смотрится опрятно, стоит уверенно. Главное, что планировку можно поменять, когда поменяется задача.',
+
+        name: 'Елена Сорокина',
+
+        role: 'Менеджер по эксплуатации',
+
+        companyLogo: 'assets/images/reviews/companies/company_07_green_energy_32h.png',
+
+        personPhoto: 'assets/images/reviews/people/person-10.png',
+
     },
+
     {
-        image: successStoriesAsset('fqukp4photo_2025-05-07_19-46-14.jpg'),
-        alt: 'Cubik modular structure at an exhibition or trade space',
+
+        company: 'Кафе «Листок»',
+
+        quote: 'Стена с растениями отделила зал, но не «съела» пространство. Выглядит дороже обычных ширм — гости это замечают.',
+
+        name: 'Анна Кравцова',
+
+        role: 'Владелец',
+
+        companyLogo: 'assets/images/reviews/companies/company_08_delivery_route_32h.png',
+
+        personPhoto: 'assets/images/reviews/people/person-09.png',
+
     },
+
     {
-        image: successStoriesAsset('ox1ubtphoto_2025-08-27 11.43.17.jpeg'),
-        alt: 'Interior scene with modular cubiks',
+
+        company: 'Студия «Расцвет»',
+
+        quote: 'Для нас важна гибкость: сначала проверяем планировку в 3D, потом подгоняем модули под помещение. На выходе — простая и современная установка без лишней возни.',
+
+        name: 'Дмитрий Волков',
+
+        role: 'Дизайнер интерьеров',
+
+        companyLogo: 'assets/images/reviews/companies/company_09_creative_media_32h.png',
+
+        personPhoto: 'assets/images/reviews/people/person-08.png',
+
     },
+
     {
-        image: successStoriesAsset('blgfz1Снимок экрана 2025-08-06 в 08.17.12.png'),
-        alt: 'cubik workspace screenshot',
+
+        company: 'Отель «Прибрежный»',
+
+        quote: 'Кашпо со скамейкой сделали лобби уютнее — без тяжёлой стационарной мебели. Ухаживать легко, а по сезону можно переставить блоки по-новому.',
+
+        name: 'Алексей Морозов',
+
+        role: 'Операционный директор',
+
+        companyLogo: 'assets/images/reviews/companies/company_10_modular_cube_32h.png',
+
+        personPhoto: 'assets/images/reviews/people/person-07.png',
+
     },
+
     {
-        image: successStoriesAsset('40luxnСнимок экрана 2025-08-06 в 08.20.19.png'),
-        alt: 'cubik project screenshot',
+
+        company: 'Агентство «Зелёная точка»',
+
+        quote: 'Нужна была зона ресепшена с характером, но без долгого ремонта. Собрали за день — выглядит сильно, а времени ушло меньше, чем ожидали.',
+
+        name: 'Ирина Лебедева',
+
+        role: 'Офис-менеджер',
+
+        companyLogo: 'assets/images/reviews/companies/company_02_eco_leaf_drop_32h.png',
+
+        personPhoto: 'assets/images/reviews/people/person-06.png',
+
     },
+
+    {
+
+        company: 'ИвентМозаика',
+
+        quote: 'Для выездных проектов важна повторная сборка. Модули перевозятся нормально, на площадке выглядят аккуратно, а на следующий ивент можно сложить по-другому.',
+
+        name: 'Павел Орлов',
+
+        role: 'Руководитель ивент-производства',
+
+        companyLogo: 'assets/images/reviews/companies/company_03_finance_shield_32h.png',
+
+        personPhoto: 'assets/images/reviews/people/person-05.png',
+
+    },
+
+    {
+
+        company: 'Детский центр «Солнечный шаг»',
+
+        quote: 'В игровой комнате система хранения светлая и понятная. Когда меняем зону — просто переставляем блоки. Детям нравится, родителям спокойнее, чем с разрозненной мебелью.',
+
+        name: 'Светлана Громова',
+
+        role: 'Директор',
+
+        companyLogo: 'assets/images/reviews/companies/company_09_creative_media_32h.png',
+
+        personPhoto: 'assets/images/reviews/people/person-04.png',
+
+    },
+
+    {
+
+        company: 'Зелёный ландшафт',
+
+        quote: 'Кашпо на 180 литров даёт нормальный объём для крупных посадок и при этом выглядит как архитектурный элемент, а не просто ящик. Та же логика хорошо масштабируется на большие площадки.',
+
+        name: 'Михаил Захаров',
+
+        role: 'Менеджер проектов',
+
+        companyLogo: 'assets/images/reviews/companies/company_01_tech_cube_32h.png',
+
+        personPhoto: 'assets/images/reviews/people/person-03.png',
+
+    },
+
+    {
+
+        company: 'Модуль Ритейл',
+
+        quote: 'Для витрин удобно, что конструкцию не выбрасываешь, а пересобираешь. Кубическая геометрия наводит порядок — товар читается, витрина не выглядит как временная импровизация.',
+
+        name: 'Ольга Романова',
+
+        role: 'Визуальный мерчандайзер',
+
+        companyLogo: 'assets/images/reviews/companies/company_04_media_playburst_32h.png',
+
+        personPhoto: 'assets/images/reviews/people/person-02.png',
+
+    },
+
+    {
+
+        company: 'Городская зелёная лаборатория',
+
+        quote: 'Для городских пилотов нужны решения, которые живут долго и их видно. Cubik даёт чёткие зоны, добавляет зелень и остаётся на следующий сезон в другой конфигурации.',
+
+        name: 'Сергей Никитин',
+
+        role: 'Координатор общественных пространств',
+
+        companyLogo: 'assets/images/reviews/companies/company_06_fintech_growth_32h.png',
+
+        personPhoto: 'assets/images/reviews/people/person-01.png',
+
+    },
+
 ];
+
+
+
+/** Заглушки для legacy-блоков app.js (секции убраны с главной) */
+
+export const GALLERY_ITEMS = [];
 
 export const SOCIAL_PROOF = {
-    featured: {
-        quote:
-            'We replaced a tired MDF partition with a two-meter run of Void + Zen. Clients comment on the acoustics and the planters finally stopped dying from heat build-up behind solid boards.',
-        name: 'Marta Lindström',
-        role: 'Principal interior architect',
-        org: 'Studio Norrkölj, Stockholm',
-        initials: 'ML',
-    },
-    cards: [
-        {
-            quote:
-                'Balcony depth is 1.2 m. The planter kit reads like custom millwork but I can break it down if we move.',
-            name: 'Jonas Weber',
-            role: 'Product designer',
-            org: 'Berlin',
-            initials: 'JW',
-            brand: 'Balcony kit',
-            icon: 'bolt',
-        },
-        {
-            quote:
-                'We trialed cubiks for a pop-up juice bar queue. Three nights to build, one night to strike—brand loved the modularity.',
-            name: 'Amélie Durand',
-            role: 'Pop-up producer',
-            org: 'Lyon',
-            initials: 'AD',
-            brand: 'Pop-up run',
-            icon: 'spark',
-        },
-        {
-            quote:
-                'Cat Castle was supposed to be temporary. Six months later it is still the favorite sun shelf.',
-            name: 'Elena Rossi',
-            role: 'Photographer',
-            org: 'Milan',
-            initials: 'ER',
-            brand: 'Pet line',
-            icon: 'heart',
-        },
-        {
-            quote:
-                'Zen facets along the meeting room long wall cut glare from the glass facade without killing the view.',
-            name: 'Daniel Okonkwo',
-            role: 'Workplace consultant',
-            org: 'London',
-            initials: 'DO',
-            brand: 'Workspace',
-            icon: 'grid',
-        },
-    ],
+
+    featured: { quote: '', name: '', role: '', org: '' },
+
+    cards: [],
+
 };
+
+export const SUCCESS_STORY_VISUALS = [];
+
+

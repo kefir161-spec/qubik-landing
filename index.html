@@ -1,478 +1,395 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cubik.one — Modular space, built by you</title>
-    <meta name="description" content="Modular cubiks, facets, and clips to build garden walls, interiors, and furniture. Configure in the 3D editor, then assemble with a calm, engineered fit.">
-    <link rel="canonical" href="https://cubik.one/">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Cubik — модульная мебель и кашпо из кубиков | Qubik</title>
+    <meta name="description" content="Собирайте мебель, кашпо, витрины и зоны отдыха из модульных кубиков Cubik. Без инструментов, для дома и улицы — можно переставлять и дополнять.">
+    <link rel="canonical" href="https://qubik.one/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="cubik.one — Modular space, built by you">
-    <meta property="og:description" content="Premium composite cubiks with interchangeable facets—UV stable, climate rated, and ready for real projects.">
-    <meta property="og:url" content="https://cubik.one/">
-    <meta property="og:image" content="https://cubik.one/assets/images/banner/Garden/2.jpeg">
+    <meta property="og:title" content="Cubik — модульная мебель и кашпо из кубиков | Qubik">
+    <meta property="og:description" content="Собирайте мебель, кашпо, витрины и зоны отдыха из модульных кубиков Cubik. Без инструментов, для дома и улицы — можно переставлять и дополнять.">
+    <meta property="og:url" content="https://qubik.one/">
+    <meta property="og:image" content="assets/images/hero/prerender_11.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css?v=57">
-    <link rel="preload" as="image" href="assets/images/banner/Garden/2.jpeg" fetchpriority="high">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap-utilities.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/cubik-styles.min.css">
+    <link rel="stylesheet" href="css/cubik-main.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/cubik-overrides.css">
+    <link rel="preload" as="image" href="assets/images/hero/prerender_11.jpg" fetchpriority="high">
 </head>
-<body class="landing-hide-stage-blocks">
+<body class="landing-cubik">
 
-<nav class="nav" id="nav" aria-label="Primary">
-    <div class="nav-inner">
-        <a href="#hero" class="nav-logo">
-            <img src="assets/images/brand/logo.png" alt="cubik.one" class="nav-logo-img" width="140" height="28" decoding="async">
-        </a>
-        <div class="nav-links" id="navLinks">
-            <a href="#material">Why modular</a>
-            <a href="#assembly">Assembly</a>
-            <a href="#construction">Clips</a>
-            <a href="#facets">Facets</a>
-            <a href="#gallery">Gallery</a>
-            <a href="#products">Shop</a>
-            <a href="#faq">FAQ</a>
-            <a href="#contact">Contact</a>
-            <a href="https://cubik.one/catalog/" class="nav-buy" target="_blank" rel="noopener noreferrer">Shop</a>
-        </div>
-        <button class="nav-burger" id="navBurger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
-            <span></span><span></span>
-        </button>
-    </div>
-</nav>
+<div class="page">
 
-<section class="hero banner" id="hero">
-    <div class="hero-inner hero-inner--centered">
-        <div class="hero-copy" data-anim>
-            <p class="hero-kicker">cubik.one</p>
-            <h1 class="hero-title hero-title--hero">Modular space,<br>built by you.</h1>
-        </div>
-        <div class="hero-showcase" id="heroShowcase">
-            <div class="hero-showcase-main">
-                <div class="hero-showcase-frame" data-hero-parallax>
-                    <div class="hero-showcase-parallax">
-                        <img
-                            class="hero-showcase-layer hero-showcase-layer--a is-visible"
-                            src="assets/images/banner/Garden/2.jpeg"
-                            alt="Garden installation with modular cubiks"
-                            width="1600"
-                            height="1200"
-                            fetchpriority="high"
-                            decoding="async"
-                        >
-                        <img
-                            class="hero-showcase-layer hero-showcase-layer--b"
-                            src="assets/images/banner/Garden/2.jpeg"
-                            alt=""
-                            width="1600"
-                            height="1200"
-                            decoding="async"
-                            aria-hidden="true"
-                        >
-                    </div>
-                </div>
-            </div>
-            <div class="hero-float-stack" role="tablist" aria-label="Use cases">
-                <button type="button" class="hero-float hero-float--a" role="tab" aria-selected="true" data-category-index="0">
-                    <span class="hero-float-inner">
-                        <img src="assets/images/banner/Garden/2.jpeg" alt="" width="320" height="240" loading="lazy" decoding="async">
-                        <span class="hero-float-caption">Garden</span>
-                    </span>
-                </button>
-                <button type="button" class="hero-float hero-float--b" role="tab" aria-selected="false" data-category-index="1">
-                    <span class="hero-float-inner">
-                        <img src="assets/images/banner/Interior/Image_202601231409.jpeg" alt="" width="320" height="240" loading="lazy" decoding="async">
-                        <span class="hero-float-caption">Interior</span>
-                    </span>
-                </button>
-                <button type="button" class="hero-float hero-float--c" role="tab" aria-selected="false" data-category-index="2">
-                    <span class="hero-float-inner">
-                        <img src="assets/images/banner/Pet%20house/photo_2026-03-26_13-29-32.jpg" alt="" width="320" height="240" loading="lazy" decoding="async">
-                        <span class="hero-float-caption">Pet house</span>
-                    </span>
-                </button>
-                <button type="button" class="hero-float hero-float--d" role="tab" aria-selected="false" data-category-index="3">
-                    <span class="hero-float-inner">
-                        <img src="assets/images/banner/Public%20space/1%20render%20%20(1).png" alt="" width="320" height="240" loading="lazy" decoding="async">
-                        <span class="hero-float-caption">Public space</span>
-                    </span>
-                </button>
-            </div>
-        </div>
-    </div>
-</section>
+    <div class="page__container">
 
-<section class="section modular-hero" id="material">
-    <h2 class="section-title modular-hero-title">Modular cubiks to<br>build anything</h2>
-    <div class="modular-hero-stage">
-        <div class="modular-hero-inner">
-            <div class="modular-hero-copy">
-                <div class="modular-accordion" id="modularAccordion">
-                <div class="modular-acc-item is-open" data-acc-item>
-                    <button type="button" class="modular-acc-trigger" id="acc-trigger-load" aria-expanded="true" aria-controls="acc-panel-load">
-                        <span class="modular-acc-icon-btn" aria-hidden="true"><span class="modular-acc-plus"></span></span>
-                        <span class="modular-acc-label">1.5 t</span>
-                    </button>
-                    <div class="modular-acc-panel" id="acc-panel-load" role="region" aria-labelledby="acc-trigger-load" aria-hidden="false">
-                        <div class="modular-acc-panel-inner">
-                            <p class="modular-acc-desc">Supports loads up to 1.5 tonnes—engineered so planters, storage walls, and furniture stacks stay stable when life gets heavy.</p>
-                            <div class="modular-acc-media">
-                                <video
-                                    class="modular-acc-video"
-                                    data-acc-video
-                                    muted
-                                    playsinline
-                                    webkit-playsinline
-                                    preload="auto"
-                                    loop
-                                    aria-label="Durability — load demonstration"
-                                >
-                                    <source src="assets/media/video/durability.mp4?v=2" type="video/mp4">
-                                </video>
+    <div class="discover catalog_main" id="discover">
+        <div class="swiper swiper-discover">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="discover__slide">
+                        <img src="assets/images/hero/prerender_11.jpg" width="5475" height="1397" alt="Модульная система Cubik">
+                        <div class="discover__row">
+                            <div class="discover__details">
+                                <div class="discover__head">
+                                    <div>
+                                        <h1 class="discover__title h1 sm-hidden">Модульная система Cubik: мебель, кашпо и пространства для бизнеса</h1>
+                                        <p class="discover__desc sm-hidden">Готовые проекты из каталога или своя сборка в 3D-конструкторе. Кубики соединяются клипсами — без инструментов, подходят для улицы и помещений.</p>
+                                        <h2 class="discover_title_h2 sm-vision">МОДУЛЬНАЯ<br> СИСТЕМА CUBIK</h2>
+                                        <p class="discover_desc_mob sm-vision">Мебель · Кашпо ·<br> Для бизнеса</p>
+                                        <div class="row discover__cta-row">
+                                            <div class="mt-4 col-lg-6">
+                                                <a class="button-counter button-large button-wide" href="https://qubik.one/catalog/">Готовые проекты</a>
+                                            </div>
+                                            <div class="mt-4 col-lg-6">
+                                                <a class="button-counter button-large button-land" href="https://qubik.one/builder/">3D-конструктор</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="modular-acc-item" data-acc-item>
-                    <button type="button" class="modular-acc-trigger" id="acc-trigger-uv" aria-expanded="false" aria-controls="acc-panel-uv">
-                        <span class="modular-acc-icon-btn" aria-hidden="true"><span class="modular-acc-plus"></span></span>
-                        <span class="modular-acc-label">UV</span>
-                    </button>
-                    <div class="modular-acc-panel" id="acc-panel-uv" role="region" aria-labelledby="acc-trigger-uv" aria-hidden="true">
-                        <div class="modular-acc-panel-inner">
-                            <p class="modular-acc-desc">Resistant to UV and all weather. Sun, rain, and temperature swings stay on-brief—surfaces remain readable and color-true season after season.</p>
+            </div>
+        </div>
+    </div>
+
+        <div class="collections collections--featured">
+            <div class="collections__head">
+                <div class="collections__title h1">Готовые решения</div>
+                <div class="collections__nav swiper" aria-label="Навигация по слайдеру">
+                    <button class="swiper-button-prev" type="button" aria-label="Предыдущий проект"></button>
+                    <button class="swiper-button-next" type="button" aria-label="Следующий проект"></button>
+                </div>
+            </div>
+            <div class="collections__wrapper">
+                <div class="swiper swiper-collections" id="swiperProducts">
+                    <div class="swiper-wrapper"></div>
+                    <div class="swiper-scrollbar" aria-hidden="true"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="creativity pt-5 pb-0">
+            <div class="creativity__head">
+                <div class="creativity__title h2">От кубиков — к готовым объектам</div>
+                <div class="mb-4">Грани соединяются в кубик — и с вашей фантазией превращаются в кашпо, мебель, витрины, перегородки и многое другое. Посмотрите, как это выглядит в деле.</div>
+            </div>
+            <section class="cb-hv" id="headVideo" data-cb-hv aria-label="Видео о Cubik">
+                <div class="cb-hv__inner">
+                    <div class="cb-hv__frame">
+                        <video
+                            class="cb-hv__media head-video-media"
+                            src="assets/media/video/head_video.mp4"
+                            muted
+                            loop
+                            playsinline
+                            webkit-playsinline
+                            preload="metadata"
+                            aria-label="Видео о Cubik"
+                        ></video>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="catalog">
+            <div class="catalog__wrapper pt-5 pb-5">
+                <div class="catalog__head d-flex justify-content-center">
+                    <div class="catalog__title d-flex mb-4 justify-content-center h1 pe-0 me-0">Как это работает</div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 mb-4">
+                        <div class="p-5" style="height: 100%; background: #ffffff; border-radius: 10px">
+                            <div class="text-left">
+                                <div class="mb-4 d-flex flex-column align-items-left">
+                                    <img src="assets/images/icons/how-icon.png" style="width: 75px" alt="Выберите готовое или соберите сами">
+                                </div>
+                                <div class="h4 mb-3">Выберите готовое или соберите сами</div>
+                                <p>В каталоге — готовые проекты. Или откройте 3D-конструктор и соберите компоновку под свой размер и задачу.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-4">
+                        <div class="p-5" style="height: 100%; background: #ffffff; border-radius: 10px">
+                            <div class="text-left">
+                                <div class="mb-4 d-flex flex-column align-items-left">
+                                    <img src="assets/images/icons/how-icon.png" style="width: 75px" alt="Соедините грани">
+                                </div>
+                                <div class="h4 mb-3">Соедините грани</div>
+                                <p>Грани стыкуются клипсами — без инструментов, сборка занимает минуты.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-4">
+                        <div class="p-5" style="height: 100%; background: #ffffff; border-radius: 10px">
+                            <div class="text-left">
+                                <div class="mb-4 d-flex flex-column align-items-left">
+                                    <img src="assets/images/icons/how-icon.png" style="width: 75px" alt="Меняйте, когда нужно">
+                                </div>
+                                <div class="h4 mb-3">Меняйте, когда нужно</div>
+                                <p>Разберите, переставьте или добавьте модули — система растёт вместе с вашими планами.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="modular-acc-item" data-acc-item>
-                    <button type="button" class="modular-acc-trigger" id="acc-trigger-poly" aria-expanded="false" aria-controls="acc-panel-poly">
-                        <span class="modular-acc-icon-btn" aria-hidden="true"><span class="modular-acc-plus"></span></span>
-                        <span class="modular-acc-label modular-acc-label--icon">
-                            <img src="assets/images/material/polymer.svg" alt="" width="28" height="28" decoding="async">
-                            <span>Composite</span>
-                        </span>
-                    </button>
-                    <div class="modular-acc-panel" id="acc-panel-poly" role="region" aria-labelledby="acc-trigger-poly" aria-hidden="true">
-                        <div class="modular-acc-panel-inner">
-                            <p class="modular-acc-desc">Modern premium polymer composite—dense structure, matte warm surface, pleasant to the touch. Quiet luxury instead of brittle plastic shine.</p>
+            </div>
+        </div>
+
+        <div class="creativity pt-5 pb-0">
+            <div class="row">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="pe-0 pe-lg-4">
+                        <div class="creativity__content">
+                            <h2>Спроектируйте проект в 3D</h2>
+                            <p>Узнайте стоимость, вес, состав деталей и примерное время сборки ещё до заказа.</p>
+                        </div>
+                        <a class="button-stroke button-medium creativity__button" href="https://qubik.one/builder/" target="_blank" rel="noopener noreferrer">Открыть конструктор</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="mt-1" style="position: relative; overflow: hidden">
+                        <video
+                            class="creativity__video"
+                            controls
+                            controlslist="nodownload"
+                            src="assets/media/video/builder-plug.mp4"
+                            style="max-width: 100%; height: auto;"
+                            preload="metadata"
+                            aria-label="3D-конструктор Cubik"
+                        ></video>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="creativity pt-5 pb-0">
+            <div class="creativity__head">
+                <div class="creativity__title h2">Модульные кубики для любой задачи</div>
+            </div>
+            <section class="section modular-hero" id="material">
+                <div class="modular-hero-stage">
+                    <div class="modular-hero-inner">
+                        <div class="modular-hero-copy">
+                            <div class="modular-accordion" id="modularAccordion">
+                                <div class="modular-acc-item is-open" data-acc-item>
+                                    <button type="button" class="modular-acc-trigger" id="acc-trigger-load" aria-expanded="true" aria-controls="acc-panel-load">
+                                        <span class="modular-acc-icon-btn" aria-hidden="true"><span class="modular-acc-plus"></span></span>
+                                        <span class="modular-acc-label">1.5 т</span>
+                                    </button>
+                                    <div class="modular-acc-panel" id="acc-panel-load" role="region" aria-labelledby="acc-trigger-load" aria-hidden="false">
+                                        <div class="modular-acc-panel-inner">
+                                            <p class="modular-acc-desc">До 1,5 тонны нагрузки — хватит для кашпо с землёй, стеллажей и мебельных стоек.</p>
+                                            <div class="modular-acc-media">
+                                                <video
+                                                    class="modular-acc-video"
+                                                    data-acc-video
+                                                    muted
+                                                    playsinline
+                                                    webkit-playsinline
+                                                    preload="auto"
+                                                    loop
+                                                    aria-label="Прочность — демонстрация нагрузки"
+                                                >
+                                                    <source src="assets/media/video/durability.mp4?v=2" type="video/mp4">
+                                                </video>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modular-acc-item" data-acc-item>
+                                    <button type="button" class="modular-acc-trigger" id="acc-trigger-uv" aria-expanded="false" aria-controls="acc-panel-uv">
+                                        <span class="modular-acc-icon-btn" aria-hidden="true"><span class="modular-acc-plus"></span></span>
+                                        <span class="modular-acc-label">УФ</span>
+                                    </button>
+                                    <div class="modular-acc-panel" id="acc-panel-uv" role="region" aria-labelledby="acc-trigger-uv" aria-hidden="true">
+                                        <div class="modular-acc-panel-inner">
+                                            <p class="modular-acc-desc">Не боится солнца и дождя. Цвет держится, поверхность не выцветает от сезона к сезону.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modular-acc-item" data-acc-item>
+                                    <button type="button" class="modular-acc-trigger" id="acc-trigger-poly" aria-expanded="false" aria-controls="acc-panel-poly">
+                                        <span class="modular-acc-icon-btn" aria-hidden="true"><span class="modular-acc-plus"></span></span>
+                                        <span class="modular-acc-label modular-acc-label--icon">
+                                            <img src="assets/images/material/polymer.svg" alt="" width="28" height="28" decoding="async">
+                                            <span>Композит</span>
+                                        </span>
+                                    </button>
+                                    <div class="modular-acc-panel" id="acc-panel-poly" role="region" aria-labelledby="acc-trigger-poly" aria-hidden="true">
+                                        <div class="modular-acc-panel-inner">
+                                            <p class="modular-acc-desc">Полимерный композит с плотной структурой и матовой поверхностью — выглядит аккуратно и ощущается солидно, без дешёвого пластикового блеска.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modular-acc-item" data-acc-item>
+                                    <button type="button" class="modular-acc-trigger" id="acc-trigger-rec" aria-expanded="false" aria-controls="acc-panel-rec">
+                                        <span class="modular-acc-icon-btn" aria-hidden="true"><span class="modular-acc-plus"></span></span>
+                                        <span class="modular-acc-label modular-acc-label--icon">
+                                            <img src="assets/images/material/recycle.svg" alt="" width="28" height="28" decoding="async">
+                                            <span>Перерабатываемый</span>
+                                        </span>
+                                    </button>
+                                    <div class="modular-acc-panel" id="acc-panel-rec" role="region" aria-labelledby="acc-trigger-rec" aria-hidden="true">
+                                        <div class="modular-acc-panel-inner">
+                                            <p class="modular-acc-desc">Материал поддаётся переработке: после разборки фракции можно сдать в приёмку вторсырья.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modular-acc-item" data-acc-item>
+                                    <button type="button" class="modular-acc-trigger" id="acc-trigger-temp" aria-expanded="false" aria-controls="acc-panel-temp">
+                                        <span class="modular-acc-icon-btn" aria-hidden="true"><span class="modular-acc-plus"></span></span>
+                                        <span class="modular-acc-label modular-acc-label--icon">
+                                            <img src="assets/images/material/temperature-range.png" alt="" width="28" height="28" decoding="async">
+                                            <span>Климат</span>
+                                        </span>
+                                    </button>
+                                    <div class="modular-acc-panel" id="acc-panel-temp" role="region" aria-labelledby="acc-trigger-temp" aria-hidden="true">
+                                        <div class="modular-acc-panel-inner">
+                                            <p class="modular-acc-desc">Работает от −25 °C до +50 °C — подходит и для зимних балконов, и для жаркого лета на улице.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hero-canvas-wrap modular-canvas-wrap" id="heroCanvasWrap">
+                            <canvas id="heroCanvas" aria-label="Интерактивное 3D-превью кубика"></canvas>
+                            <div class="hero-loader stage-loader stage-loader--pulse" id="heroLoader" aria-live="polite" aria-label="Подготовка 3D-превью"></div>
+                        </div>
+                        <div class="modular-controls" id="modularHeroControls">
+                            <p class="hero-facet-benefit" id="heroFacetBenefit">Сплошная рельефная поверхность — зонирование и приватность, спокойный минималистичный вид.</p>
+                            <div class="hero-facet-picker" id="heroFacetPicker" role="tablist" aria-label="Стиль грани">
+                                <button type="button" class="facet-tab" role="tab" data-facet-index="0" aria-selected="false">Bion</button>
+                                <button type="button" class="facet-tab" role="tab" data-facet-index="1" aria-selected="false">Void</button>
+                                <button type="button" class="facet-tab active" role="tab" data-facet-index="2" aria-selected="true">Zen</button>
+                                <button type="button" class="facet-tab" role="tab" data-facet-index="3" aria-selected="false">Zen/2</button>
+                            </div>
+                            <div class="hero-color-row">
+                                <span class="hero-color-hint">Цвет</span>
+                                <div class="color-picker hero-color-picker" id="colorPicker">
+                                    <button type="button" class="swatch" data-color="#7D7F7D" data-name="Серый" aria-label="Серый"><span style="background:#7D7F7D"></span></button>
+                                    <button type="button" class="swatch" data-color="#E1B589" data-name="Бежевый" aria-label="Бежевый"><span style="background:#E1B589"></span></button>
+                                    <button type="button" class="swatch" data-color="#0A6F3C" data-name="Зелёный" aria-label="Зелёный"><span style="background:#0A6F3C"></span></button>
+                                    <button type="button" class="swatch active" data-color="#F4F4F4" data-name="Белый" aria-label="Белый"><span style="background:#F4F4F4;border:1px solid #d2d2d7"></span></button>
+                                    <button type="button" class="swatch" data-color="#0A0A0A" data-name="Чёрный" aria-label="Чёрный"><span style="background:#0A0A0A"></span></button>
+                                </div>
+                                <p class="color-label hero-color-label" id="colorLabel">Белый</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="modular-acc-item" data-acc-item>
-                    <button type="button" class="modular-acc-trigger" id="acc-trigger-rec" aria-expanded="false" aria-controls="acc-panel-rec">
-                        <span class="modular-acc-icon-btn" aria-hidden="true"><span class="modular-acc-plus"></span></span>
-                        <span class="modular-acc-label modular-acc-label--icon">
-                            <img src="assets/images/material/recycle.svg" alt="" width="28" height="28" decoding="async">
-                            <span>Recyclable</span>
-                        </span>
-                    </button>
-                    <div class="modular-acc-panel" id="acc-panel-rec" role="region" aria-labelledby="acc-trigger-rec" aria-hidden="true">
-                        <div class="modular-acc-panel-inner">
-                            <p class="modular-acc-desc">Fully recyclable. Monomaterial-friendly thinking: disassemble, sort, and send fractions where local recycling accepts them.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="modular-acc-item" data-acc-item>
-                    <button type="button" class="modular-acc-trigger" id="acc-trigger-temp" aria-expanded="false" aria-controls="acc-panel-temp">
-                        <span class="modular-acc-icon-btn" aria-hidden="true"><span class="modular-acc-plus"></span></span>
-                        <span class="modular-acc-label modular-acc-label--icon">
-                            <img src="assets/images/material/temperature-range.png" alt="" width="28" height="28" decoding="async">
-                            <span>Climate</span>
-                        </span>
-                    </button>
-                    <div class="modular-acc-panel" id="acc-panel-temp" role="region" aria-labelledby="acc-trigger-temp" aria-hidden="true">
-                        <div class="modular-acc-panel-inner">
-                            <p class="modular-acc-desc">Rated for extreme temperatures—from −25 °C to +50 °C. Nordic balconies to Mediterranean courtyards share the same calm tolerances.</p>
-                        </div>
-                    </div>
-                </div>
+            </section>
+        </div>
+
+        <div class="collections">
+            <div class="collections__head">
+                <div class="collections__title h1">Четыре грани — сотни комбинаций</div>
+                <div class="collections__nav swiper" aria-label="Навигация по слайдеру">
+                    <button class="swiper-button-prev" type="button" aria-label="Предыдущая грань"></button>
+                    <button class="swiper-button-next" type="button" aria-label="Следующая грань"></button>
                 </div>
             </div>
-            <div class="hero-canvas-wrap modular-canvas-wrap" id="heroCanvasWrap">
-                <canvas id="heroCanvas" aria-label="Interactive 3D cubik preview"></canvas>
-                <div class="hero-loader stage-loader stage-loader--pulse" id="heroLoader" aria-live="polite" aria-label="Preparing 3D preview"></div>
-            </div>
-            <div class="modular-controls" id="modularHeroControls">
-                <p class="hero-facet-benefit" id="heroFacetBenefit">Solid relief surfaces — privacy and clean, calm lines.</p>
-                <div class="hero-facet-picker" id="heroFacetPicker" role="tablist" aria-label="Facet style">
-                    <button type="button" class="facet-tab" role="tab" data-facet-index="0" aria-selected="false">Bion</button>
-                    <button type="button" class="facet-tab" role="tab" data-facet-index="1" aria-selected="false">Void</button>
-                    <button type="button" class="facet-tab active" role="tab" data-facet-index="2" aria-selected="true">Zen</button>
-                    <button type="button" class="facet-tab" role="tab" data-facet-index="3" aria-selected="false">Zen/2</button>
-                </div>
-                <div class="hero-color-row">
-                    <span class="hero-color-hint">Color</span>
-                    <div class="color-picker hero-color-picker" id="colorPicker">
-                        <button type="button" class="swatch" data-color="#7D7F7D" data-name="Gray" aria-label="Gray"><span style="background:#7D7F7D"></span></button>
-                        <button type="button" class="swatch" data-color="#E1B589" data-name="Beige" aria-label="Beige"><span style="background:#E1B589"></span></button>
-                        <button type="button" class="swatch" data-color="#0A6F3C" data-name="Green" aria-label="Green"><span style="background:#0A6F3C"></span></button>
-                        <button type="button" class="swatch active" data-color="#F4F4F4" data-name="White" aria-label="White"><span style="background:#F4F4F4;border:1px solid #d2d2d7"></span></button>
-                        <button type="button" class="swatch" data-color="#0A0A0A" data-name="Black" aria-label="Black"><span style="background:#0A0A0A"></span></button>
-                    </div>
-                    <p class="color-label hero-color-label" id="colorLabel">White</p>
+            <div class="collections__wrapper">
+                <div class="swiper swiper-collections" id="swiperFacets">
+                    <div class="swiper-wrapper"></div>
+                    <div class="swiper-scrollbar" aria-hidden="true"></div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
 
-<section class="head-video-section" id="headVideo" aria-label="Brand film">
-    <div class="head-video-inner">
-        <div class="head-video-frame">
-            <video
-                class="head-video-media"
-                src="assets/media/video/head_video.mp4"
-                muted
-                loop
-                playsinline
-                preload="metadata"
-                aria-label="cubik.one brand film"
-            ></video>
-        </div>
-    </div>
-</section>
-
-<section class="section assembly" id="assembly">
-    <div class="section-head section-head--center">
-        <h2 class="section-title">From facets to cubik</h2>
-        <p class="section-lead section-lead--center">Six faces, six decisions—then the volume locks into something you can repeat across a run.</p>
-    </div>
-    <div class="section-stage-card">
-        <div class="assembly-stage">
-            <div class="assembly-canvas-wrap assembly-stage--interactive" id="assemblyStage" role="button" tabindex="0" aria-label="Replay cubik assembly animation">
-                <canvas id="assemblyCanvas" aria-label="Cubik assembly animation"></canvas>
+        <div class="collections">
+            <div class="collections__head">
+                <div class="collections__title h1">Отзывы клиентов</div>
+                <div class="collections__nav swiper" aria-label="Навигация по слайдеру">
+                    <button class="swiper-button-prev" type="button" aria-label="Предыдущий отзыв"></button>
+                    <button class="swiper-button-next" type="button" aria-label="Следующий отзыв"></button>
+                </div>
             </div>
-            <div class="scene-fallback scene-fallback--assembly" id="assemblyFallback" hidden aria-hidden="true">
-                <img src="assets/images/facets/zen/facet.jpg" alt="" width="900" height="900" decoding="async">
-                <img src="assets/images/facets/void/facet-izo.jpg" alt="" width="900" height="900" decoding="async">
-                <div class="scene-fallback__veil"></div>
-                <p class="scene-fallback__caption">Facets meet on one volume—mix textures, keep the grid.</p>
-            </div>
-            <p class="stage-loader assembly-loader stage-loader--pulse" id="assemblyLoader" aria-live="polite" aria-label="Preparing assembly animation"></p>
-        </div>
-        <p class="section-sub assembly-mix-note">Mix facets and colors to suit the task—one cubik, your combination.</p>
-    </div>
-</section>
-
-<section class="section construction" id="construction">
-    <div class="section-head section-head--center">
-        <h2 class="section-title">Easy to connect<br>with clips</h2>
-        <p class="section-lead section-lead--center">A 3×3 rhythm assembles on camera—then keeps turning so you can study the joint from every angle.</p>
-    </div>
-    <div class="section-stage-card">
-        <div class="construction-stage" id="constructionStage">
-            <canvas id="constructionCanvas" aria-label="Modular wall and clips animation"></canvas>
-            <div class="scene-fallback" id="constructionFallback" hidden aria-hidden="true">
-                <img src="assets/images/banner/Garden/hf-20260210-145115-85d5663e-480f-468c-b147-8c97ea81ff32.jpeg" alt="" width="1200" height="800" decoding="async">
-                <div class="scene-fallback__veil"></div>
-                <p class="scene-fallback__caption">Modular wall in situ—clips seat with a firm, repeatable click.</p>
-            </div>
-            <p class="stage-loader construction-loader stage-loader--pulse" id="constructionLoader" aria-live="polite" aria-label="Preparing 3D scene"></p>
-        </div>
-        <p class="section-sub section-sub--below-stage">Snap it in—done. Scale your build to any size.</p>
-    </div>
-</section>
-
-<section class="section facets" id="facets">
-    <div class="section-head section-head--center">
-        <h2 class="section-title">Five facets.<br>Infinite ideas.</h2>
-        <p class="section-lead section-lead--center">Each face is a product decision—choose openness, storage, relief, planting, or a slim Zen profile.</p>
-    </div>
-    <div class="facets-grid">
-        <article class="facet-card" data-anim tabindex="0">
-            <div class="facet-img-wrap">
-                <img src="assets/images/facets/bion/facet-izo.jpg" alt="Bion facet" class="facet-img" loading="lazy" width="640" height="640" decoding="async">
-            </div>
-            <h3>Bion</h3>
-            <p>Open lattice structure. Light flows through. Air circulates.</p>
-        </article>
-        <article class="facet-card" data-anim tabindex="0">
-            <div class="facet-img-wrap">
-                <img src="assets/images/facets/void/facet-izo.jpg" alt="Void facet" class="facet-img" loading="lazy" width="640" height="640" decoding="async">
-            </div>
-            <h3>Void</h3>
-            <p>Open frame. Shelves. Niches. Display space.</p>
-        </article>
-        <article class="facet-card" data-anim tabindex="0">
-            <div class="facet-img-wrap">
-                <img src="assets/images/facets/zen/facet.jpg" alt="Zen facet" class="facet-img" loading="lazy" width="640" height="640" decoding="async">
-            </div>
-            <h3>Zen</h3>
-            <p>Solid surface with relief. Privacy. Clean lines.</p>
-        </article>
-        <article class="facet-card" data-anim tabindex="0">
-            <div class="facet-img-wrap">
-                <img src="assets/images/facets/flora/facet.jpg" alt="Flora facet" class="facet-img" loading="lazy" width="640" height="640" decoding="async">
-            </div>
-            <h3>Flora</h3>
-            <p>Built-in planter. Nature built into the structure.</p>
-        </article>
-        <article class="facet-card" data-anim tabindex="0">
-            <div class="facet-img-wrap">
-                <img src="assets/images/facets/zen2/facet.jpg" alt="Zen/2 facet" class="facet-img" loading="lazy" width="640" height="640" decoding="async">
-            </div>
-            <h3>Zen/2</h3>
-            <p>Narrow facet for more layout options.</p>
-        </article>
-    </div>
-</section>
-
-<section class="section builder-promo" id="builder">
-    <div class="builder-promo-inner">
-        <div class="builder-promo-text" data-anim>
-            <h2 class="builder-promo-title">Design in 3D,<br>order with confidence</h2>
-            <p class="builder-promo-lead">Lay out facets, preview scale, and share the layout with your team before clips ever leave the box.</p>
-            <a href="https://cubik.one/builder/" class="btn-primary" target="_blank" rel="noopener noreferrer">Open editor</a>
-        </div>
-        <div class="builder-promo-video-wrap" data-anim>
-            <video
-                class="builder-promo-video"
-                src="assets/media/video/builder-plug.mp4?v=2"
-                autoplay
-                muted
-                loop
-                playsinline
-                preload="metadata"
-                aria-label="cubik.one 3D editor preview"
-            ></video>
-        </div>
-    </div>
-</section>
-
-<section class="section products" id="products">
-    <div class="section-head section-head--center">
-        <h2 class="section-title">Featured projects</h2>
-        <p class="section-lead section-lead--center">Real SKUs from the catalog—prices stay transparent, imagery stays honest.</p>
-    </div>
-    <div class="products-scroll">
-        <div class="products-grid" id="productsGrid"></div>
-    </div>
-    <div class="products-cta">
-        <a href="https://cubik.one/catalog/" class="btn-primary" target="_blank" rel="noopener noreferrer">Go to shop</a>
-    </div>
-</section>
-
-<section class="section gallery-section" id="gallery">
-    <div class="gallery-split">
-        <div class="gallery-mosaic" id="galleryMosaic" aria-label="Project photo collage"></div>
-        <div class="gallery-aside">
-            <h2 class="section-title section-title--left">Built for real places</h2>
-            <p class="section-lead gallery-aside-lead">
-                A single system stretched across gardens, studios, pets, and public flows—always the same calm detail.
-            </p>
-            <a
-                class="btn-outline"
-                href="https://cubik.one/catalog/"
-                target="_blank"
-                rel="noopener noreferrer"
-            >Browse catalog</a>
-        </div>
-    </div>
-</section>
-
-<section class="section how-section" id="how">
-    <div class="section-head section-head--center">
-        <h2 class="section-title">How it works</h2>
-        <p class="section-lead section-lead--center">Three moves from idea to something you can stand next to.</p>
-    </div>
-    <div class="how-grid" id="howGrid"></div>
-</section>
-
-<section class="section social-section" id="social">
-    <div class="social-featured-slider" id="socialFeaturedSlider" role="region" aria-roledescription="carousel" aria-label="Success stories">
-        <p class="social-featured-kicker">Success stories</p>
-        <div class="social-featured-slider-row">
-            <button type="button" class="social-orbit-btn" id="socialFPrev" aria-controls="socialFslidesTrack" aria-label="Previous story">
-                <span class="social-orbit-btn__icon" aria-hidden="true"></span>
-            </button>
-            <div class="social-fslides-viewport">
-                <div class="social-fslides-track" id="socialFslidesTrack"></div>
-            </div>
-            <button type="button" class="social-orbit-btn" id="socialFNext" aria-controls="socialFslidesTrack" aria-label="Next story">
-                <span class="social-orbit-btn__icon social-orbit-btn__icon--next" aria-hidden="true"></span>
-            </button>
-        </div>
-        <div class="social-fslides-dots" id="socialFslidesDots" role="tablist" aria-label="Choose story"></div>
-    </div>
-
-    <div class="social-cards-block">
-        <div class="social-cards-head">
-            <h2 class="section-title section-title--left">Trusted by makers who ship spaces</h2>
-            <div class="social-cards-arrows">
-                <button type="button" class="social-arrow-btn" id="socialCardsPrev" aria-label="Previous reviews">
-                    <span class="social-arrow-btn__glyph" aria-hidden="true"></span>
-                </button>
-                <button type="button" class="social-arrow-btn social-arrow-btn--emphasis" id="socialCardsNext" aria-label="Next reviews">
-                    <span class="social-arrow-btn__glyph social-arrow-btn__glyph--next" aria-hidden="true"></span>
-                </button>
+            <div class="collections__wrapper">
+                <div class="swiper swiper-collections" id="swiperTestimonials">
+                    <div class="swiper-wrapper"></div>
+                    <div class="swiper-scrollbar" aria-hidden="true"></div>
+                </div>
             </div>
         </div>
-        <p class="social-cards-lead">Notes from balconies, studios, and pop-ups—same system, different briefs.</p>
-        <div class="social-cards-viewport" id="socialCardsViewport">
-            <div class="social-cards-track" id="socialCards"></div>
-        </div>
-    </div>
-</section>
 
-<section class="section faq-section" id="faq">
-    <div class="section-head section-head--faq">
-        <h2 class="section-title section-title--left">FAQ</h2>
-        <p class="section-lead section-lead--faq">Straight answers—no brochure fog.</p>
-    </div>
-    <div class="faq-accordion" id="faqAccordion"></div>
-</section>
+        <div class="post" style="padding: 0">
+            <div class="details__box" style="border-top: none">
+                <div>
+                    <h2 class="post__title h1">Частые вопросы</h2>
+                </div>
+                <div class="categories__group" id="faqCategories"></div>
+            </div>
+        </div>
 
-<section class="section contact-section" id="contact">
-    <div class="contact-grid">
-        <div class="contact-copy" data-anim>
-            <h2 class="section-title section-title--left">Tell us about your build</h2>
-            <p class="section-lead">Share dimensions, photos, or a rough facet mix. We read every message and route commercial inquiries to the right desk.</p>
-            <p class="contact-note">Submitting opens your email app with a pre-filled draft to <strong>hello@cubik.one</strong>—nothing is stored on this static page.</p>
+        <div class="details__box details__box--cta" style="border-top: none">
+            <h2 class="catalog__title h1 mb-4">Готовы собрать свой проект?</h2>
+            <div class="row">
+                <div class="col-lg-3 mb-2 mb-lg-0">
+                    <a class="button-stroke-grey mint__button button-large button-wide" href="https://qubik.one/catalog/">Готовые проекты</a>
+                </div>
+                <div class="col-lg-3 mb-2 mb-lg-0">
+                    <a class="button-counter button-large button-wide" href="https://qubik.one/builder/">3D-конструктор</a>
+                </div>
+            </div>
         </div>
-        <form class="contact-form" id="contactForm" novalidate>
-            <label class="form-field">
-                <span>Name</span>
-                <input type="text" name="name" required autocomplete="name" placeholder="Alex Morgan">
-            </label>
-            <label class="form-field">
-                <span>Email</span>
-                <input type="email" name="email" required autocomplete="email" placeholder="you@studio.com">
-            </label>
-            <label class="form-field form-field--full">
-                <span>Project notes</span>
-                <textarea name="message" rows="5" required placeholder="Dimensions, city/climate, facet ideas…"></textarea>
-            </label>
-            <button type="submit" class="btn-primary contact-submit">Send draft</button>
-            <p class="form-status" id="contactFormStatus" hidden role="status"></p>
-        </form>
-    </div>
-</section>
 
-<footer class="footer" id="footer">
-    <div class="footer-grid">
-        <div class="footer-brand">
-            <img src="assets/images/brand/logo.png" alt="cubik.one" class="footer-logo" width="120" height="24" decoding="async">
-            <p class="footer-tagline">Modular cubiks for gardens, interiors, and public spaces—engineered composite, calm details, clip logic you can repeat.</p>
+        <div class="details__box" id="contact" style="border-top: none">
+            <h2 class="catalog__title h1 mb-4">Свяжитесь с нами</h2>
+            <form class="landing-contact-form" id="contactForm" novalidate>
+                <div class="landing-contact-form__row">
+                    <label class="landing-contact-form__field">
+                        <input type="text" name="firstName" required autocomplete="given-name" placeholder="Имя">
+                        <span class="landing-contact-form__req" aria-hidden="true">*</span>
+                    </label>
+                    <label class="landing-contact-form__field">
+                        <input type="text" name="lastName" required autocomplete="family-name" placeholder="Фамилия">
+                        <span class="landing-contact-form__req" aria-hidden="true">*</span>
+                    </label>
+                </div>
+                <div class="landing-contact-form__row">
+                    <label class="landing-contact-form__field">
+                        <input type="tel" name="phone" required autocomplete="tel" placeholder="Телефон">
+                        <span class="landing-contact-form__req" aria-hidden="true">*</span>
+                    </label>
+                    <label class="landing-contact-form__field">
+                        <input type="email" name="email" required autocomplete="email" placeholder="Email">
+                        <span class="landing-contact-form__req" aria-hidden="true">*</span>
+                    </label>
+                </div>
+                <div class="landing-contact-form__row">
+                    <label class="landing-contact-form__field">
+                        <input type="text" name="company" required autocomplete="organization" placeholder="Компания">
+                        <span class="landing-contact-form__req" aria-hidden="true">*</span>
+                    </label>
+                    <label class="landing-contact-form__field">
+                        <input type="text" name="country" required autocomplete="country-name" placeholder="Страна">
+                        <span class="landing-contact-form__req" aria-hidden="true">*</span>
+                    </label>
+                </div>
+                <label class="landing-contact-form__field landing-contact-form__field--full">
+                    <textarea name="message" required rows="5" placeholder="Сообщение"></textarea>
+                    <span class="landing-contact-form__req" aria-hidden="true">*</span>
+                </label>
+                <button type="submit" class="button-counter button-large landing-contact-form__submit">Отправить →</button>
+                <p class="landing-contact-form__status" id="contactFormStatus" hidden role="status"></p>
+            </form>
         </div>
-        <div class="footer-col">
-            <h3 class="footer-heading">Explore</h3>
-            <a href="https://cubik.one/catalog/" target="_blank" rel="noopener noreferrer">Catalog</a>
-            <a href="https://cubik.one/builder/" target="_blank" rel="noopener noreferrer">3D editor</a>
-            <a href="#facets">Facets</a>
-            <a href="#gallery">Gallery</a>
-        </div>
-        <div class="footer-col">
-            <h3 class="footer-heading">Company</h3>
-            <a href="#contact">Contact</a>
-            <a href="mailto:hello@cubik.one">hello@cubik.one</a>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <p class="footer-copy">© 2026 cubik.one. All rights reserved.</p>
-    </div>
-</footer>
 
+    </div><!-- /.page__container -->
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
 <script type="importmap">
@@ -483,6 +400,7 @@
     }
 }
 </script>
-<script type="module" src="js/app.js?v=79"></script>
+<script type="module" src="js/cubik-landing.js"></script>
+<script type="module" src="js/app.js"></script>
 </body>
 </html>

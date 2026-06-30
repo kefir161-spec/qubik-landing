@@ -1,0 +1,950 @@
+<!--
+    Modular hero widget (self-contained).
+    Скопируйте всё содержимое этого файла в поле "Widget" блока в админке.
+
+    Зависимости (загружаются с CDN внутри скрипта виджета):
+        three@0.162.0 + GLTFLoader + DRACOLoader (через esm.sh — автоматически резолвит зависимости).
+
+    Пути к ассетам:
+        Модели:  core/components/minishop2/model/Models_GLB/{bion,void,zen,zen-2}.glb
+        Видео:   videos/durability.mp4
+
+    Префикс классов cb-mh-* выбран уникальным, чтобы не конфликтовать с темой админки.
+-->
+<section class="cb-mh" data-cb-mh aria-label="Modular cubiks">
+    <div class="cb-mh__stage">
+        <div class="cb-mh__inner">
+            <div class="cb-mh__copy">
+                <div class="cb-mh__accordion" data-cb-mh-acc>
+                    <div class="cb-mh__acc-item is-open" data-cb-mh-acc-item>
+                        <button type="button" class="cb-mh__acc-trigger" aria-expanded="true">
+                            <span class="cb-mh__acc-icon-btn" aria-hidden="true"><span class="cb-mh__acc-plus"></span></span>
+                            <span class="cb-mh__acc-label">1.5 t</span>
+                        </button>
+                        <div class="cb-mh__acc-panel" aria-hidden="false">
+                            <div class="cb-mh__acc-panel-inner">
+                                <p class="cb-mh__acc-desc">Supports loads up to 1.5 tonnes&mdash;engineered so planters, storage walls, and furniture stacks stay stable when life gets heavy.</p>
+                                <div class="cb-mh__acc-media">
+                                    <video
+                                        class="cb-mh__acc-video"
+                                        data-cb-mh-acc-video
+                                        muted
+                                        playsinline
+                                        webkit-playsinline
+                                        preload="auto"
+                                        loop
+                                        aria-label="Durability — load demonstration"
+                                    >
+                                        <source src="videos/durability.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cb-mh__acc-item" data-cb-mh-acc-item>
+                        <button type="button" class="cb-mh__acc-trigger" aria-expanded="false">
+                            <span class="cb-mh__acc-icon-btn" aria-hidden="true"><span class="cb-mh__acc-plus"></span></span>
+                            <span class="cb-mh__acc-label">UV</span>
+                        </button>
+                        <div class="cb-mh__acc-panel" aria-hidden="true">
+                            <div class="cb-mh__acc-panel-inner">
+                                <p class="cb-mh__acc-desc">Resistant to UV and all weather. Sun, rain, and temperature swings stay on-brief&mdash;surfaces remain readable and color-true season after season.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cb-mh__acc-item" data-cb-mh-acc-item>
+                        <button type="button" class="cb-mh__acc-trigger" aria-expanded="false">
+                            <span class="cb-mh__acc-icon-btn" aria-hidden="true"><span class="cb-mh__acc-plus"></span></span>
+                            <span class="cb-mh__acc-label cb-mh__acc-label--icon">
+                                <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="#1d1d1f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="2.4"/>
+                                    <ellipse cx="12" cy="12" rx="9.5" ry="3.6" transform="rotate(45 12 12)"/>
+                                    <ellipse cx="12" cy="12" rx="9.5" ry="3.6" transform="rotate(-45 12 12)"/>
+                                </svg>
+                                <span>Composite</span>
+                            </span>
+                        </button>
+                        <div class="cb-mh__acc-panel" aria-hidden="true">
+                            <div class="cb-mh__acc-panel-inner">
+                                <p class="cb-mh__acc-desc">Modern premium polymer composite&mdash;dense structure, matte warm surface, pleasant to the touch. Quiet luxury instead of brittle plastic shine.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cb-mh__acc-item" data-cb-mh-acc-item>
+                        <button type="button" class="cb-mh__acc-trigger" aria-expanded="false">
+                            <span class="cb-mh__acc-icon-btn" aria-hidden="true"><span class="cb-mh__acc-plus"></span></span>
+                            <span class="cb-mh__acc-label cb-mh__acc-label--icon">
+                                <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="#1d1d1f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 17l-2 2l2 2"/>
+                                    <path d="M10 19h9a2 2 0 0 0 1.75 -2.75l-.55 -1"/>
+                                    <path d="M8.536 11l-.732 -2.732l-2.732 .732"/>
+                                    <path d="M7.804 8.268l-4.5 7.794a2 2 0 0 0 1.506 2.89l1.141 .024"/>
+                                    <path d="M15.464 11l2.732 .732l.732 -2.732"/>
+                                    <path d="M18.196 11.732l-4.5 -7.794a2 2 0 0 0 -3.256 -.14l-.591 .976"/>
+                                </svg>
+                                <span>Recyclable</span>
+                            </span>
+                        </button>
+                        <div class="cb-mh__acc-panel" aria-hidden="true">
+                            <div class="cb-mh__acc-panel-inner">
+                                <p class="cb-mh__acc-desc">Fully recyclable. Monomaterial-friendly thinking: disassemble, sort, and send fractions where local recycling accepts them.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cb-mh__acc-item" data-cb-mh-acc-item>
+                        <button type="button" class="cb-mh__acc-trigger" aria-expanded="false">
+                            <span class="cb-mh__acc-icon-btn" aria-hidden="true"><span class="cb-mh__acc-plus"></span></span>
+                            <span class="cb-mh__acc-label cb-mh__acc-label--icon">
+                                <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="#1d1d1f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M10 13.5a4 4 0 1 0 4 0v-8.5a2 2 0 0 0 -4 0v8.5"/>
+                                    <path d="M10 9h2"/>
+                                    <path d="M10 12h2"/>
+                                </svg>
+                                <span>Climate</span>
+                            </span>
+                        </button>
+                        <div class="cb-mh__acc-panel" aria-hidden="true">
+                            <div class="cb-mh__acc-panel-inner">
+                                <p class="cb-mh__acc-desc">Rated for extreme temperatures&mdash;from &minus;25&nbsp;&deg;C to +50&nbsp;&deg;C. Nordic balconies to Mediterranean courtyards share the same calm tolerances.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cb-mh__canvas-wrap" data-cb-mh-canvas-wrap>
+                <canvas data-cb-mh-canvas aria-label="Interactive 3D cubik preview"></canvas>
+                <div class="cb-mh__loader" data-cb-mh-loader aria-live="polite" aria-label="Preparing 3D preview"></div>
+            </div>
+            <div class="cb-mh__controls">
+                <p class="cb-mh__benefit" data-cb-mh-benefit>Solid relief surfaces — privacy and clean, calm lines.</p>
+                <div class="cb-mh__facet-picker" data-cb-mh-facet-picker role="tablist" aria-label="Facet style">
+                    <button type="button" class="cb-mh__facet-tab" role="tab" data-cb-mh-facet="0" aria-selected="false">Bion</button>
+                    <button type="button" class="cb-mh__facet-tab" role="tab" data-cb-mh-facet="1" aria-selected="false">Void</button>
+                    <button type="button" class="cb-mh__facet-tab is-active" role="tab" data-cb-mh-facet="2" aria-selected="true">Zen</button>
+                    <button type="button" class="cb-mh__facet-tab" role="tab" data-cb-mh-facet="3" aria-selected="false">Zen/2</button>
+                </div>
+                <div class="cb-mh__color-row">
+                    <span class="cb-mh__color-hint">Color</span>
+                    <div class="cb-mh__color-picker" data-cb-mh-color-picker>
+                        <button type="button" class="cb-mh__swatch" data-cb-mh-color="#7D7F7D" data-cb-mh-color-name="Gray" aria-label="Gray"><span style="background:#7D7F7D"></span></button>
+                        <button type="button" class="cb-mh__swatch" data-cb-mh-color="#E1B589" data-cb-mh-color-name="Beige" aria-label="Beige"><span style="background:#E1B589"></span></button>
+                        <button type="button" class="cb-mh__swatch" data-cb-mh-color="#0A6F3C" data-cb-mh-color-name="Green" aria-label="Green"><span style="background:#0A6F3C"></span></button>
+                        <button type="button" class="cb-mh__swatch is-active" data-cb-mh-color="#F4F4F4" data-cb-mh-color-name="White" aria-label="White"><span style="background:#F4F4F4;border:1px solid #d2d2d7"></span></button>
+                        <button type="button" class="cb-mh__swatch" data-cb-mh-color="#0A0A0A" data-cb-mh-color-name="Black" aria-label="Black"><span style="background:#0A0A0A"></span></button>
+                    </div>
+                    <p class="cb-mh__color-label" data-cb-mh-color-label>White</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .cb-mh {
+        --cb-mh-text: #141416;
+        --cb-mh-text2: #6e6e73;
+        --cb-mh-ink: #0d0d0f;
+        --cb-mh-btn: #0A6F3C;
+        --cb-mh-bg: #fafaf8;
+        --cb-mh-acc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+        --cb-mh-acc-dur: 0.52s;
+        --cb-mh-ease: cubic-bezier(.4, 0, .2, 1);
+
+        box-sizing: border-box;
+        text-align: center;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 22px 120px;
+        background: var(--cb-mh-bg);
+        color: var(--cb-mh-text);
+        font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        line-height: 1.5;
+    }
+    .cb-mh *, .cb-mh *::before, .cb-mh *::after { box-sizing: border-box; }
+
+    .cb-mh__stage {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: clamp(28px, 4vw, 44px);
+        background: #fff;
+        border-radius: 20px;
+        overflow: visible;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+        text-align: left;
+    }
+    .cb-mh__inner {
+        display: grid;
+        grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+        grid-template-rows: auto auto;
+        column-gap: clamp(40px, 5vw, 72px);
+        row-gap: clamp(10px, 1.4vw, 20px);
+        align-items: start;
+    }
+    .cb-mh__copy {
+        grid-column: 1;
+        grid-row: 1;
+        align-self: start;
+        padding-top: clamp(28px, 4.2vw, 56px);
+        max-width: 520px;
+        min-height: 0;
+    }
+    .cb-mh__accordion {
+        margin-top: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        max-width: 520px;
+    }
+    .cb-mh__acc-item {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: stretch;
+        width: auto;
+        max-width: 100%;
+        border-radius: 999px;
+        background: #eceef1;
+        overflow: hidden;
+        contain: layout style;
+        transition:
+            border-radius var(--cb-mh-acc-dur) var(--cb-mh-acc-ease),
+            box-shadow var(--cb-mh-acc-dur) var(--cb-mh-acc-ease);
+    }
+    .cb-mh__acc-item.is-open {
+        border-radius: 20px;
+        background: #eceef1;
+        box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+    }
+    .cb-mh__acc-trigger {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        width: auto;
+        max-width: 100%;
+        margin: 0;
+        padding: 14px 18px 14px 14px;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        font: inherit;
+        text-align: left;
+        color: var(--cb-mh-text);
+        border-radius: inherit;
+        transition: color 0.2s, padding-bottom var(--cb-mh-acc-dur) var(--cb-mh-acc-ease);
+    }
+    .cb-mh__acc-trigger:hover { color: #000; }
+    .cb-mh__acc-trigger:focus-visible {
+        outline: 2px solid var(--cb-mh-btn);
+        outline-offset: 2px;
+    }
+    .cb-mh__acc-icon-btn {
+        flex-shrink: 0;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.85);
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform var(--cb-mh-acc-dur) var(--cb-mh-acc-ease);
+    }
+    .cb-mh__acc-plus {
+        display: block;
+        width: 11px;
+        height: 11px;
+        position: relative;
+    }
+    .cb-mh__acc-plus::before,
+    .cb-mh__acc-plus::after {
+        content: '';
+        position: absolute;
+        background: #1d1d1f;
+        border-radius: 1px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .cb-mh__acc-plus::before { width: 11px; height: 1.5px; }
+    .cb-mh__acc-plus::after {
+        width: 1.5px;
+        height: 11px;
+        transition: transform var(--cb-mh-acc-dur) var(--cb-mh-acc-ease);
+    }
+    .cb-mh__acc-item.is-open .cb-mh__acc-plus::after {
+        transform: translate(-50%, -50%) scaleY(0);
+    }
+    .cb-mh__acc-label {
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        flex: 0 1 auto;
+        color: var(--cb-mh-text);
+    }
+    .cb-mh__acc-label--icon {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .cb-mh__acc-label--icon span { font-weight: 700; }
+    .cb-mh__acc-label--icon svg { flex-shrink: 0; }
+    .cb-mh__acc-panel {
+        display: grid;
+        grid-template-rows: 0fr;
+        min-height: 0;
+        min-width: 0;
+        max-width: 0;
+        overflow: hidden;
+        interpolate-size: allow-keywords;
+        transition: grid-template-rows var(--cb-mh-acc-dur) var(--cb-mh-acc-ease);
+    }
+    .cb-mh__acc-item.is-open .cb-mh__acc-panel {
+        grid-template-rows: 1fr;
+        max-width: min(420px, 100%);
+    }
+    .cb-mh__acc-item.is-open .cb-mh__acc-panel:has(.cb-mh__acc-media) {
+        max-width: min(400px, 100%);
+    }
+    .cb-mh__acc-panel-inner {
+        min-height: 0;
+        overflow: hidden;
+        padding: 0 18px;
+        width: 100%;
+        max-width: min(420px, 100%);
+        opacity: 0;
+        transform: translateY(-6px);
+        transition:
+            opacity calc(var(--cb-mh-acc-dur) * 0.95) var(--cb-mh-acc-ease) 0.06s,
+            transform calc(var(--cb-mh-acc-dur) * 0.95) var(--cb-mh-acc-ease) 0.06s;
+    }
+    .cb-mh__acc-panel-inner:has(.cb-mh__acc-media) {
+        max-width: min(400px, 100%);
+    }
+    .cb-mh__acc-item.is-open .cb-mh__acc-panel-inner {
+        opacity: 1;
+        transform: translateY(0);
+        padding-bottom: 18px;
+    }
+    .cb-mh__acc-item.is-open .cb-mh__acc-trigger {
+        padding-bottom: 12px;
+    }
+    .cb-mh__acc-desc {
+        font-size: 14px;
+        line-height: 1.5;
+        color: var(--cb-mh-text2);
+        margin: 0;
+    }
+    .cb-mh__acc-media {
+        margin-top: 14px;
+        border-radius: 12px;
+        overflow: hidden;
+        background: #0a0a0a;
+        aspect-ratio: 16 / 9;
+    }
+    .cb-mh__acc-video {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .cb-mh__canvas-wrap {
+        grid-column: 2;
+        grid-row: 1;
+        align-self: start;
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        max-height: min(72vh, 640px);
+        min-height: 280px;
+        margin: clamp(4px, 0.8vw, 12px) 0 0;
+        position: relative;
+        overflow: hidden;
+        border-radius: 4px;
+        background: #fff;
+    }
+    .cb-mh__canvas-wrap canvas {
+        display: block;
+        width: 100%;
+        height: 100%;
+        touch-action: none;
+    }
+    .cb-mh__loader {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.88);
+        pointer-events: none;
+        transition: opacity 0.5s;
+    }
+    .cb-mh__loader::after {
+        content: '';
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        border: 2px solid rgba(10, 111, 60, 0.2);
+        border-top-color: var(--cb-mh-btn);
+        animation: cb-mh-spin 0.85s linear infinite;
+    }
+    .cb-mh__loader.is-hidden { opacity: 0; pointer-events: none; }
+    @keyframes cb-mh-spin { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) {
+        .cb-mh__loader::after {
+            animation: none;
+            border-top-color: rgba(10, 111, 60, 0.45);
+        }
+        .cb-mh__acc-item,
+        .cb-mh__acc-panel,
+        .cb-mh__acc-panel-inner,
+        .cb-mh__acc-icon-btn,
+        .cb-mh__acc-plus::after {
+            transition-duration: 0.01ms;
+            transition-delay: 0s;
+        }
+    }
+
+    .cb-mh__controls {
+        grid-column: 2;
+        grid-row: 2;
+        margin-top: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 0;
+    }
+    .cb-mh__benefit {
+        margin: 0;
+        font-size: 13px;
+        color: var(--cb-mh-text2);
+        text-align: center;
+        max-width: min(100%, 340px);
+        line-height: 1.45;
+        min-height: 2.9em;
+    }
+    .cb-mh__facet-picker {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 6px;
+        margin-top: clamp(8px, 1vw, 12px);
+    }
+    .cb-mh__facet-tab {
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--cb-mh-text2);
+        padding: 6px 12px;
+        border-radius: 999px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        background: #fff;
+        cursor: pointer;
+        font-family: inherit;
+        transition: color 0.2s, border-color 0.2s, background 0.2s, transform 0.2s var(--cb-mh-ease);
+    }
+    .cb-mh__facet-tab:hover {
+        border-color: rgba(0, 0, 0, 0.2);
+        color: var(--cb-mh-text);
+        transform: translateY(-1px);
+    }
+    .cb-mh__facet-tab.is-active {
+        color: var(--cb-mh-text);
+        border-color: rgba(0, 0, 0, 0.22);
+        background: rgba(0, 0, 0, 0.04);
+    }
+    .cb-mh__facet-tab:disabled,
+    .cb-mh__facet-tab[aria-disabled='true'] {
+        opacity: 0.42;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+    .cb-mh__facet-tab.is-active:disabled { opacity: 1; cursor: default; pointer-events: auto; }
+
+    .cb-mh__color-row {
+        margin-top: clamp(12px, 1.4vw, 16px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+    .cb-mh__color-hint {
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #aeaeb2;
+    }
+    .cb-mh__color-picker {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 0;
+    }
+    .cb-mh__swatch {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        padding: 2px;
+        border: 2px solid transparent;
+        background: transparent;
+        cursor: pointer;
+        transition: border-color 0.3s var(--cb-mh-ease), transform 0.2s;
+    }
+    .cb-mh__swatch span {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+    }
+    .cb-mh__swatch.is-active { border-color: var(--cb-mh-btn); }
+    .cb-mh__swatch:hover { transform: scale(1.08); }
+    .cb-mh__color-label {
+        margin: 0;
+        text-align: center;
+        font-size: 12px;
+        color: #aeaeb2;
+    }
+
+    @media (max-width: 900px) {
+        .cb-mh__stage {
+            padding: clamp(18px, 4vw, 28px);
+            margin-top: 0;
+        }
+        .cb-mh__inner {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto auto;
+            row-gap: clamp(14px, 2.8vw, 22px);
+            column-gap: 0;
+        }
+        .cb-mh__canvas-wrap {
+            grid-column: 1;
+            grid-row: 1;
+            width: 100%;
+            margin: 0;
+            max-height: min(68vh, 460px);
+            min-height: min(280px, 52vw);
+            aspect-ratio: 1 / 1;
+        }
+        .cb-mh__controls {
+            grid-column: 1;
+            grid-row: 2;
+            margin-top: 0;
+            width: 100%;
+        }
+        .cb-mh__copy {
+            grid-column: 1;
+            grid-row: 3;
+            max-width: none;
+            text-align: left;
+            align-self: stretch;
+            padding-top: clamp(4px, 1vw, 12px);
+        }
+        .cb-mh__accordion {
+            margin-left: 0;
+            margin-right: 0;
+            max-width: 100%;
+            align-items: stretch;
+            width: 100%;
+        }
+        .cb-mh__acc-item { width: 100%; max-width: 100%; }
+        .cb-mh__acc-trigger { width: 100%; justify-content: flex-start; }
+        .cb-mh__acc-item.is-open .cb-mh__acc-panel { max-width: 100%; }
+        .cb-mh__acc-panel-inner { max-width: 100% !important; }
+        .cb-mh__facet-tab { min-height: 44px; padding: 10px 14px; font-size: 13px; }
+        .cb-mh__facet-picker { gap: 6px 8px; row-gap: 8px; }
+        .cb-mh__swatch { width: 40px; height: 40px; padding: 3px; }
+        .cb-mh__color-picker { flex-wrap: wrap; row-gap: 10px; column-gap: clamp(8px, 2vw, 12px); }
+    }
+    @media (max-width: 768px) {
+        .cb-mh { padding: 0 18px 80px; }
+    }
+    @media (max-width: 480px) {
+        .cb-mh__canvas-wrap {
+            max-height: min(62vh, 380px);
+            min-height: 240px;
+        }
+        .cb-mh__benefit { min-height: auto; }
+    }
+</style>
+
+<script type="module">
+    const THREE_BASE = 'https://esm.sh/three@0.162.0';
+    const DRACO_DECODER_URL = 'https://cdn.jsdelivr.net/npm/three@0.162.0/examples/jsm/libs/draco/gltf/';
+    const MODELS_BASE = 'core/components/minishop2/model/Models_GLB/';
+
+    const PALETTE_LIGHT = 0xf4f4f4;
+    const PALETTE_GREY = 0x8c8f8c;
+
+    const FACETS = [
+        { file: 'bion.glb', baseColor: PALETTE_LIGHT, benefit: 'Open lattice — light and airflow for plants and screens.' },
+        { file: 'void.glb', baseColor: PALETTE_LIGHT, benefit: 'Open frame — shelves, niches, and display surfaces.' },
+        { file: 'zen.glb', baseColor: PALETTE_GREY, benefit: 'Solid relief surfaces — privacy and clean, calm lines.' },
+        { file: 'zen-2.glb', baseColor: PALETTE_GREY, benefit: 'Low profile — stackable, compact layouts.' },
+    ];
+    const DEFAULT_FACET = 2;
+    const MODEL_SCALE = 7.35;
+    const BASE_TILT_X = 0.3;
+    const ROT_SPEED = -0.0075;
+
+    const INIT_ATTR = 'data-cb-mh-init';
+
+    function setupAccordion(root) {
+        const items = root.querySelectorAll('[data-cb-mh-acc-item]');
+        const pauseVideo = (item) => {
+            const v = item.querySelector('video[data-cb-mh-acc-video]');
+            if (!v) return;
+            v.pause();
+            try { v.currentTime = 0; } catch (e) {}
+        };
+        const playVideo = (item) => {
+            const v = item.querySelector('video[data-cb-mh-acc-video]');
+            if (!v) return;
+            v.muted = true;
+            v.defaultMuted = true;
+            v.setAttribute('muted', '');
+            if ('playsInline' in v) v.playsInline = true;
+            v.setAttribute('playsinline', '');
+            const tryPlay = () => v.play().catch(() => {});
+            if (v.readyState >= 2) tryPlay();
+            else {
+                v.addEventListener('canplay', tryPlay, { once: true });
+                if (v.readyState < 2) v.load();
+            }
+        };
+        const setItemA11y = (item, open) => {
+            item.querySelector('.cb-mh__acc-trigger')?.setAttribute('aria-expanded', open ? 'true' : 'false');
+            item.querySelector('.cb-mh__acc-panel')?.setAttribute('aria-hidden', open ? 'false' : 'true');
+        };
+        items.forEach((item) => {
+            const trigger = item.querySelector('.cb-mh__acc-trigger');
+            trigger?.addEventListener('click', () => {
+                const opening = !item.classList.contains('is-open');
+                items.forEach((other) => {
+                    other.classList.remove('is-open');
+                    setItemA11y(other, false);
+                    pauseVideo(other);
+                });
+                if (opening) {
+                    item.classList.add('is-open');
+                    setItemA11y(item, true);
+                    playVideo(item);
+                }
+            });
+        });
+
+        const initialOpen = root.querySelector('.cb-mh__acc-item.is-open');
+        if (initialOpen) {
+            setItemA11y(initialOpen, true);
+            if ('IntersectionObserver' in window) {
+                const io = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        if (!entry.target.classList.contains('is-open')) return;
+                        if (entry.isIntersecting) playVideo(entry.target);
+                        else pauseVideo(entry.target);
+                    });
+                }, { threshold: 0.15, rootMargin: '0px 0px -5% 0px' });
+                items.forEach((item) => io.observe(item));
+            } else {
+                playVideo(initialOpen);
+            }
+        }
+    }
+
+    async function setupHeroScene(section) {
+        const canvasWrap = section.querySelector('[data-cb-mh-canvas-wrap]');
+        const canvas = section.querySelector('[data-cb-mh-canvas]');
+        const loader = section.querySelector('[data-cb-mh-loader]');
+        const benefitEl = section.querySelector('[data-cb-mh-benefit]');
+        const facetPicker = section.querySelector('[data-cb-mh-facet-picker]');
+        const colorPicker = section.querySelector('[data-cb-mh-color-picker]');
+        const colorLabel = section.querySelector('[data-cb-mh-color-label]');
+        if (!canvas || !canvasWrap) return;
+
+        let THREE, GLTFLoader, DRACOLoader;
+        try {
+            [THREE, { GLTFLoader }, { DRACOLoader }] = await Promise.all([
+                import(THREE_BASE),
+                import(`${THREE_BASE}/examples/jsm/loaders/GLTFLoader.js`),
+                import(`${THREE_BASE}/examples/jsm/loaders/DRACOLoader.js`),
+            ]);
+            THREE.ColorManagement.enabled = true;
+        } catch (err) {
+            console.warn('[cb-mh] three.js failed to load', err);
+            loader?.classList.add('is-hidden');
+            return;
+        }
+
+        let renderer;
+        try {
+            renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false });
+        } catch (e) {
+            console.warn('[cb-mh] WebGL unsupported', e);
+            loader?.classList.add('is-hidden');
+            return;
+        }
+        renderer.outputColorSpace = THREE.SRGBColorSpace;
+        renderer.toneMapping = THREE.ACESFilmicToneMapping;
+        renderer.toneMappingExposure = 1.2;
+        const isNarrow = () => window.matchMedia('(max-width: 900px)').matches;
+        const applyPixelRatio = () => renderer.setPixelRatio(Math.min(window.devicePixelRatio, isNarrow() ? 1.25 : 2));
+        applyPixelRatio();
+
+        const scene = new THREE.Scene();
+        scene.background = new THREE.Color(0xffffff);
+        const camera = new THREE.PerspectiveCamera(32, 1, 0.1, 500);
+        camera.position.set(0, 1.2, 34);
+
+        scene.add(new THREE.AmbientLight(0xffffff, 0.75));
+        const dirLight = new THREE.DirectionalLight(0xffffff, 1.1);
+        dirLight.position.set(6, 10, 8);
+        scene.add(dirLight);
+        const fill = new THREE.DirectionalLight(0xffffff, 0.3);
+        fill.position.set(-5, 3, -4);
+        scene.add(fill);
+
+        const sharedMaterial = new THREE.MeshStandardMaterial({
+            color: new THREE.Color().setHex(PALETTE_LIGHT, THREE.SRGBColorSpace),
+            roughness: 0.6,
+            metalness: 0.05,
+        });
+
+        const compositionRoot = new THREE.Group();
+        compositionRoot.rotation.order = 'YXZ';
+        const tiltGroup = new THREE.Group();
+        tiltGroup.rotation.x = BASE_TILT_X;
+        compositionRoot.add(tiltGroup);
+        scene.add(compositionRoot);
+
+        const loaded = new Array(FACETS.length).fill(null);
+        let activeIndex = DEFAULT_FACET;
+        let rotationY = 0;
+        let layoutReady = false;
+
+        const draco = new DRACOLoader();
+        draco.setDecoderPath(DRACO_DECODER_URL);
+        const gltfLoader = new GLTFLoader();
+        gltfLoader.setDRACOLoader(draco);
+
+        function buildModelGroup(srcObj, colorHex) {
+            srcObj.rotation.set(0, 0, 0);
+            srcObj.quaternion.set(0, 0, 0, 1);
+            srcObj.traverse((child) => {
+                if (!child.isMesh) return;
+                const mat = sharedMaterial.clone();
+                mat.color.setHex(colorHex, THREE.SRGBColorSpace);
+                child.material = mat;
+            });
+            const box0 = new THREE.Box3().setFromObject(srcObj);
+            const size = box0.getSize(new THREE.Vector3());
+            const maxD = Math.max(size.x, size.y, size.z, 0.001);
+            srcObj.scale.setScalar(MODEL_SCALE / maxD);
+            const box1 = new THREE.Box3().setFromObject(srcObj);
+            const center = box1.getCenter(new THREE.Vector3());
+            srcObj.position.sub(center);
+            const group = new THREE.Group();
+            group.add(srcObj);
+            group.rotation.order = 'YXZ';
+            const fitBox = new THREE.Box3().setFromObject(group);
+            const fitSize = fitBox.getSize(new THREE.Vector3());
+            group.userData.heroFitSpan = {
+                x: Math.max(fitSize.x, 1e-6),
+                y: Math.max(fitSize.y, 1e-6),
+                z: Math.max(fitSize.z, 1e-6),
+            };
+            return group;
+        }
+
+        function fitCameraTo(group) {
+            if (!group) return;
+            const u = group.userData?.heroFitSpan;
+            if (!u) return;
+            group.updateMatrixWorld(true);
+            const center = new THREE.Vector3();
+            group.getWorldPosition(center);
+            const s = typeof group.scale?.x === 'number' ? group.scale.x : 1;
+            const narrow = isNarrow();
+            const padding = narrow ? 1.16 : 1.32;
+            const paddingV = padding * (narrow ? 1.06 : 1.12);
+            const minDist = narrow ? 5.1 : 7.8;
+            const horiz = Math.hypot(u.x * s, u.z * s);
+            const spanY = u.y * s;
+            const vHalf = THREE.MathUtils.degToRad(camera.fov * 0.5);
+            const tanHalfV = Math.tan(vHalf);
+            const tanHalfH = tanHalfV * Math.max(camera.aspect, 0.01);
+            const distV = (spanY * paddingV) / (2 * tanHalfV);
+            const distH = (horiz * padding) / (2 * tanHalfH);
+            const distZ = (horiz * padding) / (2 * tanHalfV);
+            const dist = Math.max(distV, distH, distZ, minDist);
+            const yLift = spanY * 0.072;
+            const lookYOffset = -spanY * 0.14;
+            camera.position.set(center.x, center.y + yLift, center.z + dist);
+            camera.lookAt(center.x, center.y + lookYOffset, center.z);
+            camera.updateProjectionMatrix();
+        }
+
+        function setActive(index) {
+            activeIndex = index;
+            loaded.forEach((g, j) => {
+                if (g) g.visible = j === index;
+            });
+            section.querySelectorAll('[data-cb-mh-facet]').forEach((btn) => {
+                const i = Number.parseInt(btn.dataset.cbMhFacet, 10);
+                const isActive = i === index;
+                btn.classList.toggle('is-active', isActive);
+                btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+            });
+            if (benefitEl) benefitEl.textContent = FACETS[index]?.benefit ?? '';
+            applyActiveColor();
+            const next = loaded[index];
+            if (next) fitCameraTo(next);
+        }
+
+        function getActiveColorHex() {
+            const sw = section.querySelector('.cb-mh__swatch.is-active');
+            return sw?.dataset?.cbMhColor || '#F4F4F4';
+        }
+
+        function applyActiveColor(animate = false) {
+            const hex = getActiveColorHex();
+            const h = hex.startsWith('#') ? parseInt(hex.slice(1), 16) : parseInt(hex, 16);
+            if (!Number.isFinite(h)) return;
+            const target = new THREE.Color().setHex(h, THREE.SRGBColorSpace);
+            const targets = [];
+            compositionRoot.traverse((child) => {
+                if (child.isMesh && child.material?.color) targets.push(child.material.color);
+            });
+            if (!animate) {
+                targets.forEach((c) => c.copy(target));
+                return;
+            }
+            const starts = targets.map((c) => c.clone());
+            const duration = 450;
+            const t0 = performance.now();
+            const step = (now) => {
+                const k = Math.min(1, (now - t0) / duration);
+                const e = k < 0.5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
+                targets.forEach((c, i) => c.lerpColors(starts[i], target, e));
+                if (k < 1) requestAnimationFrame(step);
+            };
+            requestAnimationFrame(step);
+        }
+
+        function updateTabAvailability() {
+            section.querySelectorAll('[data-cb-mh-facet]').forEach((btn) => {
+                const i = Number.parseInt(btn.dataset.cbMhFacet, 10);
+                const isLoaded = !!loaded[i];
+                btn.disabled = !isLoaded;
+                btn.setAttribute('aria-disabled', isLoaded ? 'false' : 'true');
+            });
+        }
+
+        function loadModel(index) {
+            const cfg = FACETS[index];
+            return new Promise((resolve) => {
+                gltfLoader.load(
+                    `${MODELS_BASE}${cfg.file}`,
+                    (gltf) => {
+                        const group = buildModelGroup(gltf.scene, cfg.baseColor);
+                        loaded[index] = group;
+                        tiltGroup.add(group);
+                        group.visible = index === activeIndex;
+                        updateTabAvailability();
+                        resolve(true);
+                    },
+                    undefined,
+                    (err) => {
+                        console.warn(`[cb-mh] model failed: ${cfg.file}`, err);
+                        resolve(false);
+                    }
+                );
+            });
+        }
+
+        await loadModel(DEFAULT_FACET);
+        if (!loaded[DEFAULT_FACET]) {
+            loader?.classList.add('is-hidden');
+            return;
+        }
+        layoutReady = true;
+        loader?.classList.add('is-hidden');
+        setActive(DEFAULT_FACET);
+
+        const loadRest = () => {
+            FACETS.forEach((_, i) => { if (i !== DEFAULT_FACET) loadModel(i); });
+        };
+        if (typeof requestIdleCallback !== 'undefined') requestIdleCallback(loadRest, { timeout: 2500 });
+        else setTimeout(loadRest, 0);
+
+        facetPicker?.addEventListener('click', (e) => {
+            const btn = e.target.closest('[data-cb-mh-facet]');
+            if (!btn) return;
+            const i = Number.parseInt(btn.dataset.cbMhFacet, 10);
+            if (!Number.isFinite(i) || !loaded[i]) return;
+            setActive(i);
+        });
+
+        colorPicker?.addEventListener('click', (e) => {
+            const sw = e.target.closest('.cb-mh__swatch');
+            if (!sw) return;
+            section.querySelectorAll('.cb-mh__swatch').forEach((s) => s.classList.remove('is-active'));
+            sw.classList.add('is-active');
+            if (colorLabel) colorLabel.textContent = sw.dataset.cbMhColorName || '';
+            applyActiveColor(true);
+        });
+
+        function resize() {
+            const w = canvasWrap.clientWidth;
+            const h = canvasWrap.clientHeight;
+            if (w === 0 || h === 0) return;
+            applyPixelRatio();
+            renderer.setSize(w, h, false);
+            camera.aspect = w / h;
+            camera.updateProjectionMatrix();
+            if (layoutReady) {
+                const active = loaded[activeIndex];
+                if (active) fitCameraTo(active);
+            }
+        }
+        resize();
+        window.addEventListener('resize', resize);
+
+        let inView = true;
+        if ('IntersectionObserver' in window) {
+            new IntersectionObserver((entries) => {
+                inView = entries[0]?.isIntersecting ?? true;
+            }, { rootMargin: '80px 0px', threshold: 0.02 }).observe(section);
+        }
+
+        let prevMs = performance.now();
+        (function animate() {
+            requestAnimationFrame(animate);
+            const now = performance.now();
+            let dt = (now - prevMs) / 1000;
+            prevMs = now;
+            if (!Number.isFinite(dt) || dt <= 0) dt = 1 / 60;
+            if (dt > 0.05) dt = 0.05;
+            const scale = dt * 60;
+            rotationY += ROT_SPEED * scale;
+            compositionRoot.rotation.y = rotationY;
+            if (inView) renderer.render(scene, camera);
+        })();
+    }
+
+    function init() {
+        document.querySelectorAll('[data-cb-mh]').forEach((section) => {
+            if (section.getAttribute(INIT_ATTR) === '1') return;
+            section.setAttribute(INIT_ATTR, '1');
+            const accRoot = section.querySelector('[data-cb-mh-acc]');
+            if (accRoot) setupAccordion(accRoot);
+            setupHeroScene(section);
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init, { once: true });
+    } else {
+        init();
+    }
+</script>

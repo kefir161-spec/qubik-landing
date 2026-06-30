@@ -121,6 +121,7 @@ navLinks?.querySelectorAll('a').forEach(a => {
             entries.forEach((entry) => {
                 inView = entry.isIntersecting;
                 if (inView) {
+                    try { v.currentTime = 0; } catch (e) {}
                     if (v.readyState >= 2) tryPlay();
                     else {
                         v.addEventListener(
@@ -133,6 +134,7 @@ navLinks?.querySelectorAll('a').forEach(a => {
                     }
                 } else {
                     v.pause();
+                    try { v.currentTime = 0; } catch (e) {}
                 }
             });
         },
@@ -145,9 +147,11 @@ navLinks?.querySelectorAll('a').forEach(a => {
 // Hero — crossfade + карточки категорий (автосмена всех фото каждые 5 с)
 // =============================================
 const heroTL = gsap.timeline({ defaults: { ease: 'power3.out' } });
-heroTL
-    .to('.hero-copy', { opacity: 1, y: 0, duration: 0.55 })
-    .to('.hero-showcase', { opacity: 1, y: 0, duration: 0.52 }, '-=0.32');
+if (document.querySelector('.hero-copy') && document.querySelector('.hero-showcase')) {
+    heroTL
+        .to('.hero-copy', { opacity: 1, y: 0, duration: 0.55 })
+        .to('.hero-showcase', { opacity: 1, y: 0, duration: 0.52 }, '-=0.32');
+}
 
 function bannerAssetUrl(folder, file) {
     return ['assets', 'images', 'banner', folder, file].map(encodeURIComponent).join('/');
@@ -734,10 +738,10 @@ let heroTiltGroup = null;
 const HERO_DEFAULT_FACET_INDEX = 2;
 
 const HERO_FACET_BENEFITS = [
-    'Open lattice — light and airflow for plants and screens.',
-    'Open frame — shelves, niches, and display surfaces.',
-    'Solid relief surfaces — privacy and clean, calm lines.',
-    'Low profile — stackable, compact layouts.',
+    'Решётчатая грань — свет и воздух проходят сквозь конструкцию, удобно для растений и декоративных экранов.',
+    'Открытый контур — полки, ниши и витринные проёмы без лишней массы.',
+    'Сплошная рельефная поверхность — зонирование и приватность, спокойный минималистичный вид.',
+    'Низкий профиль — компактные стопки и аккуратные горизонтальные линии.',
 ];
 
 function groundHeroGroupOnY(g) {
@@ -1447,11 +1451,11 @@ let animPrevFrameMs = performance.now();
 // Color Picker (modular 3D hero)
 // =============================================
 const colorNames = {
-    '#7D7F7D': 'Gray',
-    '#E1B589': 'Beige',
-    '#0A6F3C': 'Green',
-    '#F4F4F4': 'White',
-    '#0A0A0A': 'Black',
+    '#7D7F7D': 'Серый',
+    '#E1B589': 'Бежевый',
+    '#0A6F3C': 'Зелёный',
+    '#F4F4F4': 'Белый',
+    '#0A0A0A': 'Чёрный',
 };
 
 document.querySelectorAll('#colorPicker .swatch').forEach((sw) => {
@@ -1463,7 +1467,7 @@ document.querySelectorAll('#colorPicker .swatch').forEach((sw) => {
         const h = hex?.startsWith('#') ? parseInt(hex.slice(1), 16) : parseInt(hex || '0', 16);
         if (!Number.isFinite(h)) return;
         const label = document.getElementById('colorLabel');
-        if (label) label.textContent = colorNames[hex] || '';
+        if (label) label.textContent = sw.dataset.name || colorNames[hex] || '';
 
         applyHeroPaletteColorToRoot(heroCompositionRoot, hex, { animate: true });
     });
@@ -4799,17 +4803,25 @@ scheduleHeavySectionInit('assembly', initAssemblyViewer);
     form.addEventListener('submit', (e) => {
         e.preventDefault();
         const fd = new FormData(form);
-        const name = String(fd.get('name') || '').trim();
+        const firstName = String(fd.get('firstName') || '').trim();
+        const lastName = String(fd.get('lastName') || '').trim();
+        const phone = String(fd.get('phone') || '').trim();
         const email = String(fd.get('email') || '').trim();
+        const company = String(fd.get('company') || '').trim();
+        const country = String(fd.get('country') || '').trim();
         const message = String(fd.get('message') || '').trim();
-        if (!name || !email || !message) return;
-        const subject = encodeURIComponent(`cubik.one — inquiry from ${name}`);
-        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}\n`);
-        window.location.href = `mailto:hello@cubik.one?subject=${subject}&body=${body}`;
+        if (!firstName || !lastName || !phone || !email || !company || !country || !message) return;
+
+        const fullName = `${firstName} ${lastName}`.trim();
+        const subject = encodeURIComponent(`Qubik — заявка от ${fullName}`);
+        const body = encodeURIComponent(
+            `Имя: ${firstName}\nФамилия: ${lastName}\nТелефон: ${phone}\nEmail: ${email}\nКомпания: ${company}\nСтрана: ${country}\n\nСообщение:\n${message}\n`,
+        );
+        window.location.href = `mailto:hello@qubik.one?subject=${subject}&body=${body}`;
         if (status) {
             status.hidden = false;
             status.textContent =
-                'If your mail program did not open automatically, write to hello@cubik.one with the same details.';
+                'Если почта не открылась — напишите на hello@qubik.one и продублируйте данные из формы.';
         }
         form.reset();
     });

@@ -1,0 +1,125 @@
+<!--
+    Brand film widget (self-contained).
+    Скопируйте всё содержимое этого файла в поле "Widget" блока в админке.
+    Видео берётся по пути videos/head_video_2.mp4 (как в поле Video).
+    Префикс классов cb-hv-* выбран уникальным, чтобы не конфликтовать с темой.
+-->
+<section class="cb-hv" data-cb-hv aria-label="Brand film">
+    <div class="cb-hv__inner">
+        <div class="cb-hv__frame">
+            <video
+                class="cb-hv__media"
+                src="videos/head_video_2.mp4"
+                muted
+                loop
+                playsinline
+                webkit-playsinline
+                preload="metadata"
+                aria-label="Brand film"
+            ></video>
+        </div>
+    </div>
+</section>
+
+<style>
+    .cb-hv {
+        background: #fafaf8;
+        padding: 10px 22px;
+        box-sizing: border-box;
+    }
+    .cb-hv__inner {
+        width: 100%;
+        max-width: min(960px, 100%);
+        margin: 0 auto;
+    }
+    .cb-hv__frame {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        border-radius: clamp(12px, 1.2vw, 20px) clamp(12px, 1.2vw, 20px) clamp(8px, 1vw, 14px) clamp(20px, 2vw, 32px);
+        overflow: hidden;
+        background: #000;
+        box-shadow:
+            0 1px 0 rgba(255, 255, 255, 0.06) inset,
+            0 40px 100px rgba(0, 0, 0, 0.22),
+            0 12px 32px rgba(0, 0, 0, 0.12);
+    }
+    .cb-hv__media {
+        position: absolute;
+        inset: 0;
+        width: 100% !important;
+        height: 100% !important;
+        max-width: none !important;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+    }
+
+    @media (max-width: 768px) {
+        .cb-hv { padding: 80px 18px; }
+        .cb-hv__frame { border-radius: 14px; }
+    }
+    @media (max-width: 480px) {
+        .cb-hv__frame { border-radius: 12px; }
+    }
+</style>
+
+<script>
+    (function initCbHeadVideoWidget() {
+        var INIT_ATTR = 'data-cb-hv-init';
+
+        function setup(section) {
+            if (!section || section.getAttribute(INIT_ATTR) === '1') return;
+            var video = section.querySelector('.cb-hv__media');
+            if (!video) return;
+            section.setAttribute(INIT_ATTR, '1');
+
+            video.muted = true;
+            video.defaultMuted = true;
+            video.setAttribute('muted', '');
+            if ('playsInline' in video) video.playsInline = true;
+            video.setAttribute('playsinline', '');
+            video.setAttribute('webkit-playsinline', '');
+
+            var inView = false;
+            var tryPlay = function () { video.play().catch(function () {}); };
+
+            if (typeof IntersectionObserver !== 'function') {
+                tryPlay();
+                return;
+            }
+
+            var io = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    inView = entry.isIntersecting;
+                    if (inView) {
+                        try { video.currentTime = 0; } catch (e) {}
+                        if (video.readyState >= 2) {
+                            tryPlay();
+                        } else {
+                            video.addEventListener('canplay', function onCanPlay() {
+                                video.removeEventListener('canplay', onCanPlay);
+                                if (inView) tryPlay();
+                            });
+                        }
+                    } else {
+                        video.pause();
+                        try { video.currentTime = 0; } catch (e) {}
+                    }
+                });
+            }, { root: null, rootMargin: '0px 0px -8% 0px', threshold: 0.22 });
+
+            io.observe(section);
+        }
+
+        function init() {
+            document.querySelectorAll('[data-cb-hv]').forEach(setup);
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init, { once: true });
+        } else {
+            init();
+        }
+    })();
+</script>
