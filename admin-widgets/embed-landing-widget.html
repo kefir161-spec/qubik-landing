@@ -1,6 +1,7 @@
 <!--
     Виджет встраивания лендинга Cubik.
     Скопируйте всё содержимое в HTML-блок админки.
+    У блока в админке уберите верхний/боковой padding, если останется зазор.
 -->
 <div class="cb-embed" data-cb-embed>
     <iframe
@@ -16,12 +17,11 @@
 
 <style>
     .cb-embed {
-        position: relative;
-        left: 50%;
-        width: 100vw;
-        max-width: 100vw;
-        margin: 0 0 0 -50vw;
-        padding: 0;
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 !important;
+        padding: 0 !important;
         overflow: hidden;
         background: #f7fbfa;
         box-sizing: border-box;
@@ -30,11 +30,13 @@
     .cb-embed__frame {
         display: block;
         width: 100%;
+        max-width: 100%;
         height: 8600px;
-        margin: 0;
-        padding: 0;
+        margin: 0 !important;
+        padding: 0 !important;
         border: 0;
         background: #f7fbfa;
+        vertical-align: top;
     }
 </style>
 

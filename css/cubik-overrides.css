@@ -311,17 +311,26 @@ body.landing-cubik > .page {
 }
 
 /* Режим встраивания в iframe (?embed=1) */
+html.is-embed {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    background: #f7fbfa;
+}
+
 html.is-embed,
 html.is-embed body.landing-cubik {
     margin: 0 !important;
     padding: 0 !important;
     width: 100% !important;
-    max-width: none !important;
+    max-width: 100% !important;
     background: #f7fbfa;
 }
 
 html.is-embed body.landing-cubik {
-    overflow-x: hidden;
+    overflow-x: hidden !important;
     min-height: 0;
 }
 
@@ -330,13 +339,18 @@ html.is-embed body.landing-cubik .page__container {
     margin: 0 !important;
     padding: 0 !important;
     width: 100% !important;
-    max-width: none !important;
+    max-width: 100% !important;
     min-height: 0;
+}
+
+html.is-embed .landing-cubik .page__container > *:first-child {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
 }
 
 html.is-embed .landing-cubik .discover.catalog_main {
     width: 100% !important;
-    max-width: none !important;
+    max-width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
     overflow: hidden;
@@ -346,7 +360,7 @@ html.is-embed .landing-cubik .swiper-discover,
 html.is-embed .landing-cubik .swiper-discover .swiper-wrapper,
 html.is-embed .landing-cubik .swiper-discover .swiper-slide {
     width: 100% !important;
-    max-width: none !important;
+    max-width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
     height: auto !important;
@@ -396,13 +410,13 @@ html.is-embed .landing-cubik .post,
 html.is-embed .landing-cubik .footer,
 html.is-embed .landing-cubik .cb-hv {
     width: 100% !important;
-    max-width: none !important;
+    max-width: 100% !important;
     box-sizing: border-box;
 }
 
 html.is-embed .landing-cubik .collections {
     width: min(100%, calc(var(--page-max, 1320px) + 2 * var(--page-gutter, 56px))) !important;
-    max-width: min(100%, calc(var(--page-max, 1320px) + 2 * var(--page-gutter, 56px))) !important;
+    max-width: 100% !important;
     margin-inline: auto !important;
     box-sizing: border-box;
 }
