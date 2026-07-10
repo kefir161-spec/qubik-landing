@@ -499,7 +499,7 @@
     .landing-cubik .discover_desc_mob {
         font-size: clamp(0.9375rem, 3.8vw, 1.0625rem);
         line-height: 1.45;
-        margin-bottom: clamp(1.5rem, 8vw, 2.5rem);
+        margin-bottom: clamp(1.5rem, 8vw, 2.5rem) !important;
     }
 
     .landing-cubik .discover .button-large {

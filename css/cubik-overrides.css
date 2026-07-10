@@ -368,12 +368,13 @@ html.is-embed .landing-cubik .swiper-discover .swiper-slide {
 }
 
 html.is-embed .landing-cubik .catalog_main .discover__slide {
-    min-height: 0 !important;
     width: 100% !important;
     max-width: none !important;
     margin: 0 !important;
     height: auto;
-    aspect-ratio: 5475 / 1397;
+    min-height: clamp(20rem, 55vw, 32rem) !important;
+    aspect-ratio: unset !important;
+    align-items: flex-end;
 }
 
 html.is-embed .landing-cubik .discover__slide > img {
@@ -381,17 +382,24 @@ html.is-embed .landing-cubik .discover__slide > img {
     right: 0 !important;
     width: 100% !important;
     max-width: none !important;
-    object-position: center top;
+    object-position: center center;
 }
 
 html.is-embed .landing-cubik .discover__row {
     line-height: normal;
 }
 
-@media only screen and (max-width: 1023px) {
+@media only screen and (max-width: 767px) {
     html.is-embed .landing-cubik .catalog_main .discover__slide {
-        aspect-ratio: 5475 / 1397;
-        max-height: none;
+        min-height: clamp(22rem, 92vw, 36rem) !important;
+    }
+
+    html.is-embed .landing-cubik .discover__slide > img {
+        object-position: 62% center;
+    }
+
+    html.is-embed .landing-cubik .discover_desc_mob {
+        margin-bottom: clamp(1.5rem, 8vw, 2.5rem) !important;
     }
 }
 

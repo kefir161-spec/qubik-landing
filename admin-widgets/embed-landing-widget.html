@@ -1,9 +1,3 @@
-<!--
-    Виджет встраивания лендинга Cubik.
-    Скопируйте ВСЁ содержимое в HTML-блок админки.
-
-    В админке у блока: padding = 0, margin сверху = 0.
--->
 <style>
     html,
     body {
@@ -52,14 +46,14 @@
         var frame = document.querySelector('[data-cb-embed] .cb-embed__frame');
         if (!frame) return;
 
-        var applied = false;
+        var lastHeight = 0;
 
         window.addEventListener('message', function (event) {
             if (event.data?.type !== 'qubik-landing:resize') return;
             var height = Number(event.data.height);
             if (!height || height < 800 || height > 12000) return;
-            if (applied) return;
-            applied = true;
+            if (Math.abs(height - lastHeight) < 2) return;
+            lastHeight = height;
             frame.style.height = Math.ceil(height) + 'px';
         });
     })();

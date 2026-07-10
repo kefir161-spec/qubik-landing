@@ -34,14 +34,11 @@ function initEmbedMode() {
 
     let lastSent = 0;
     let timer = null;
-    let sentCount = 0;
 
     const notifyHeight = () => {
-        if (sentCount >= 2) return;
         const height = measureEmbedHeight();
         if (height < 800 || height > 12000 || Math.abs(height - lastSent) < 2) return;
         lastSent = height;
-        sentCount += 1;
         window.parent.postMessage({ type: 'qubik-landing:resize', height }, '*');
     };
 
@@ -55,7 +52,10 @@ function initEmbedMode() {
     window.addEventListener('load', () => {
         scheduleNotify();
         setTimeout(notifyHeight, 500);
+        setTimeout(notifyHeight, 1500);
     });
+
+    window.addEventListener('resize', scheduleNotify);
 
     document.querySelectorAll('img, video').forEach((media) => {
         if (media.complete) return;
