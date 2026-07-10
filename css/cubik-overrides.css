@@ -322,7 +322,7 @@ html.is-embed body.landing-cubik {
 
 html.is-embed body.landing-cubik {
     overflow-x: hidden;
-    min-height: 100%;
+    min-height: 0;
 }
 
 html.is-embed body.landing-cubik > .page,
@@ -339,6 +339,7 @@ html.is-embed .landing-cubik .discover.catalog_main {
     max-width: none !important;
     margin: 0 !important;
     padding: 0 !important;
+    overflow: hidden;
 }
 
 html.is-embed .landing-cubik .swiper-discover,
@@ -349,20 +350,28 @@ html.is-embed .landing-cubik .swiper-discover .swiper-slide {
     margin: 0 !important;
     padding: 0 !important;
     height: auto !important;
+    min-height: 0 !important;
 }
 
 html.is-embed .landing-cubik .catalog_main .discover__slide {
-    /* В iframe нельзя vh/svh — высота iframe раздувает hero */
     min-height: 0 !important;
     width: 100%;
-    height: clamp(360px, 25.5vw, 720px);
-    max-height: 720px;
+    height: auto;
+    aspect-ratio: 5475 / 1397;
+}
+
+html.is-embed .landing-cubik .discover__slide > img {
+    object-position: center top;
+}
+
+html.is-embed .landing-cubik .discover__row {
+    line-height: normal;
 }
 
 @media only screen and (max-width: 1023px) {
     html.is-embed .landing-cubik .catalog_main .discover__slide {
-        height: clamp(420px, 130vw, 680px);
-        max-height: 680px;
+        aspect-ratio: 5475 / 1397;
+        max-height: none;
     }
 }
 
