@@ -51,9 +51,19 @@
 
 .landing-cubik .creativity__title.h2 {
     font-size: clamp(2rem, 3vw, 4rem);
-    line-height: 1;
+    line-height: 1.05;
     font-weight: 800;
     letter-spacing: -0.02em;
+    text-wrap: balance;
+    hyphens: none;
+    -webkit-hyphens: none;
+}
+
+.landing-cubik .creativity__head .creativity__lead {
+    max-width: 49rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
 .landing-cubik .creativity__content h2 {
@@ -514,13 +524,10 @@
         font-size: clamp(1.65rem, 6.5vw, 2.25rem);
         margin-bottom: clamp(1rem, 4vw, 1.5rem);
         text-align: left;
+        line-height: 1.08;
     }
 
-    .landing-cubik .creativity__head {
-        text-align: left;
-    }
-
-    .landing-cubik .creativity__head > .mb-4 {
+    .landing-cubik .creativity__head .creativity__lead {
         text-align: left;
         margin-left: 0;
         margin-right: 0;

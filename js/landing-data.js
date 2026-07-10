@@ -32,9 +32,9 @@ export const HOW_IT_WORKS = [
 
     {
 
-        title: 'Соедините грани',
+        title: 'Стыкуйте кубы',
 
-        body: 'Грани стыкуются клипсами — без инструментов, сборка занимает минуты.',
+        body: 'Кубы стыкуются клипсами — без инструментов, сборка занимает минуты.',
 
     },
 
@@ -142,7 +142,7 @@ export const FACET_PRODUCTS = [
 
         href: 'https://qubik.one/blocks/facet-zen/2-grey/',
 
-        images: ['assets/images/facets/zen2/facet.jpg'],
+        images: ['assets/images/facets/zen2/facet.webp'],
 
     },
 
@@ -154,7 +154,7 @@ export const FACET_PRODUCTS = [
 
         href: 'https://qubik.one/blocks/zen-green/',
 
-        images: ['assets/images/facets/zen/facet.jpg'],
+        images: ['assets/images/facets/zen/facet.webp'],
 
     },
 
@@ -166,7 +166,7 @@ export const FACET_PRODUCTS = [
 
         href: 'https://qubik.one/blocks/void-green/',
 
-        images: ['assets/images/facets/void/facet-izo.jpg'],
+        images: ['assets/images/facets/void/facet-izo.webp'],
 
     },
 
@@ -178,7 +178,7 @@ export const FACET_PRODUCTS = [
 
         href: 'https://qubik.one/blocks/bion-green/',
 
-        images: ['assets/images/facets/bion/facet-izo.jpg'],
+        images: ['assets/images/facets/bion/facet-izo.webp'],
 
     },
 
@@ -192,7 +192,7 @@ export const FAQ_ITEMS = [
 
         q: 'Что показывает 3D-конструктор?',
 
-        a: 'Считает количество граней, общий вес, примерное время сборки и ориентировочную стоимость заказа. Сцену и расчёты можно сохранить — пригодится для согласования с командой или запроса коммерческого предложения.',
+        a: 'Визуализирует конструкцию, считает количество граней, общий вес, примерное время сборки и ориентировочную стоимость заказа. Сцену и расчёты можно сохранить — пригодится для согласования с командой или запроса коммерческого предложения.',
 
     },
 

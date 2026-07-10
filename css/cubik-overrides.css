@@ -133,6 +133,16 @@ body.landing-cubik > .page {
     }
 }
 
+.landing-cubik .modular-acc-desc {
+    hyphens: none;
+    -webkit-hyphens: none;
+    text-wrap: pretty;
+}
+
+.landing-cubik .nobreak {
+    white-space: nowrap;
+}
+
 /* Форма «Свяжитесь с нами» */
 .landing-cubik .landing-contact-form {
     display: flex;
@@ -276,6 +286,28 @@ body.landing-cubik > .page {
         margin-left: 0;
         text-align: left;
     }
+}
+
+/* Грани — прозрачный фон и ровные подписи */
+.landing-cubik #swiperFacets .collections__image {
+    background: transparent;
+}
+
+.landing-cubik #swiperFacets .collections__image img {
+    object-fit: contain;
+    border-radius: 0;
+    background: transparent;
+}
+
+.landing-cubik #swiperFacets .collections__details {
+    margin-top: 1.25rem;
+    min-height: 3.4rem;
+    align-items: flex-start;
+}
+
+.landing-cubik #swiperFacets .collections__subtitle {
+    min-height: 2.7em;
+    line-height: 1.35;
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
