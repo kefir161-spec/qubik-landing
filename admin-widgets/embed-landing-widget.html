@@ -9,12 +9,13 @@
         width: 100vw;
         margin-left: calc(50% - 50vw);
         margin-right: calc(50% - 50vw);
-        margin-top: 0 !important;
         margin-bottom: 0 !important;
         padding: 0 !important;
         overflow: hidden;
         background: #f7fbfa;
         box-sizing: border-box;
+        --cb-header-gap: 0px;
+        margin-top: calc(-1 * var(--cb-header-gap)) !important;
     }
 
     .cb-embed__frame {
@@ -43,10 +44,21 @@
 
 <script>
     (function () {
-        var frame = document.querySelector('[data-cb-embed] .cb-embed__frame');
+        var embed = document.querySelector('[data-cb-embed]');
+        var frame = embed && embed.querySelector('.cb-embed__frame');
         if (!frame) return;
 
         var lastHeight = 0;
+
+        function removeHeaderGap() {
+            if (!embed) return;
+            var header = document.querySelector('.header, .header_new, header');
+            if (!header) return;
+            var gap = embed.getBoundingClientRect().top - header.getBoundingClientRect().bottom;
+            if (gap > 1 && gap < 160) {
+                embed.style.setProperty('--cb-header-gap', Math.round(gap) + 'px');
+            }
+        }
 
         window.addEventListener('message', function (event) {
             if (event.data?.type !== 'qubik-landing:resize') return;
@@ -56,5 +68,9 @@
             lastHeight = height;
             frame.style.height = Math.ceil(height) + 'px';
         });
+
+        removeHeaderGap();
+        window.addEventListener('load', removeHeaderGap);
+        window.addEventListener('resize', removeHeaderGap);
     })();
 </script>

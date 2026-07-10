@@ -382,11 +382,12 @@ html.is-embed .landing-cubik .discover__slide > img {
     right: 0 !important;
     width: 100% !important;
     max-width: none !important;
-    object-position: center center;
+    object-position: center top;
 }
 
 html.is-embed .landing-cubik .discover__row {
     line-height: normal;
+    padding-top: clamp(2rem, 4vw, 3rem);
 }
 
 @media only screen and (max-width: 767px) {
