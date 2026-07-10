@@ -1,5 +1,29 @@
 import { PRODUCTS, FACET_PRODUCTS, FAQ_ITEMS, TESTIMONIALS } from './landing-data.js';
 
+function measureEmbedHeight() {
+    const page = document.querySelector('body.landing-cubik > .page');
+    const sections = document.querySelectorAll('.page__container > *');
+    let bottom = 0;
+
+    sections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        bottom = Math.max(bottom, rect.bottom + window.scrollY);
+    });
+
+    if (page) {
+        const pageRect = page.getBoundingClientRect();
+        bottom = Math.max(bottom, pageRect.bottom + window.scrollY);
+    }
+
+    if (bottom < 320) {
+        return Math.ceil(document.documentElement.scrollHeight);
+    }
+
+    return Math.ceil(bottom);
+}
+
+let embedResizeState = null;
+
 function initEmbedMode() {
     const params = new URLSearchParams(window.location.search);
     const embedded = params.has('embed') || window.self !== window.top;
@@ -8,22 +32,44 @@ function initEmbedMode() {
     document.documentElement.classList.add('is-embed');
     document.body.classList.add('is-embed');
 
+    let lastSent = 0;
+    let timer = null;
+
     const notifyHeight = () => {
-        const height = Math.max(
-            document.documentElement.scrollHeight,
-            document.body.scrollHeight,
-            document.documentElement.offsetHeight,
-        );
+        const height = measureEmbedHeight();
+        if (height < 320 || Math.abs(height - lastSent) < 2) return;
+        lastSent = height;
         window.parent.postMessage({ type: 'qubik-landing:resize', height }, '*');
     };
 
-    notifyHeight();
-    window.addEventListener('load', notifyHeight);
-    window.addEventListener('resize', notifyHeight);
+    const scheduleNotify = () => {
+        clearTimeout(timer);
+        timer = setTimeout(notifyHeight, 120);
+    };
+
+    embedResizeState = { scheduleNotify, notifyHeight };
+
+    scheduleNotify();
+    window.addEventListener('load', scheduleNotify);
+
+    document.querySelectorAll('img, video').forEach((media) => {
+        if (media.complete) return;
+        media.addEventListener('load', scheduleNotify, { once: true });
+        media.addEventListener('loadeddata', scheduleNotify, { once: true });
+    });
 
     if (typeof ResizeObserver !== 'undefined') {
-        new ResizeObserver(notifyHeight).observe(document.body);
+        const root = document.querySelector('.page__container');
+        if (root) {
+            const observer = new ResizeObserver(scheduleNotify);
+            observer.observe(root);
+            root.querySelectorAll(':scope > *').forEach((section) => observer.observe(section));
+        }
     }
+}
+
+function refreshEmbedHeight() {
+    embedResizeState?.scheduleNotify();
 }
 
 initEmbedMode();
@@ -337,3 +383,6 @@ if (typeof ResizeObserver !== 'undefined') {
 mountFaq();
 initHeadVideo();
 initNavBurger();
+refreshEmbedHeight();
+setTimeout(refreshEmbedHeight, 600);
+setTimeout(refreshEmbedHeight, 2000);

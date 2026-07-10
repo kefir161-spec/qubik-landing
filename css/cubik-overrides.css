@@ -339,9 +339,6 @@ html.is-embed .landing-cubik .discover.catalog_main {
     max-width: none !important;
     margin: 0 !important;
     padding: 0 !important;
-    min-height: 100vh;
-    min-height: 100svh;
-    min-height: 100dvh;
 }
 
 html.is-embed .landing-cubik .swiper-discover,
@@ -351,9 +348,6 @@ html.is-embed .landing-cubik .swiper-discover .swiper-slide {
     max-width: none !important;
     margin: 0 !important;
     padding: 0 !important;
-    min-height: 100vh;
-    min-height: 100svh;
-    min-height: 100dvh;
     height: auto !important;
 }
 

@@ -2,15 +2,15 @@
     Виджет встраивания лендинга Cubik на всю ширину экрана.
     Скопируйте всё содержимое в HTML-блок админки.
 
-    Лендинг растягивается на 100vw (выходит из узкой колонки темы)
-    и по высоте подстраивается под весь контент — без «окна» со скроллом внутри.
+    Работает даже если CMS вырезает <script>: iframe стартует с запасом по высоте.
+    Со скриптом высота подгоняется точно под контент.
 -->
 <div class="cb-embed" data-cb-embed>
     <iframe
         class="cb-embed__frame"
         src="https://kefir161-spec.github.io/qubik-landing/?embed=1"
         title="Cubik — модульная система"
-        scrolling="no"
+        scrolling="yes"
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
         allowfullscreen
@@ -21,7 +21,6 @@
     .cb-embed {
         position: relative;
         left: 50%;
-        right: 50%;
         width: 100vw;
         max-width: 100vw;
         margin-left: -50vw;
@@ -37,15 +36,11 @@
     .cb-embed__frame {
         display: block;
         width: 100%;
-        height: 7200px;
-        min-height: 100vh;
-        min-height: 100svh;
-        min-height: 100dvh;
+        height: 8600px;
         margin: 0;
         padding: 0;
         border: 0;
         background: #f7fbfa;
-        overflow: hidden;
     }
 </style>
 
@@ -60,7 +55,7 @@
         window.addEventListener('message', function (event) {
             if (!event.data || event.data.type !== 'qubik-landing:resize') return;
             var height = Number(event.data.height);
-            if (!height || height < 320) return;
+            if (!height || height < 320 || height > 20000) return;
             frame.style.height = Math.ceil(height) + 'px';
         });
     })();
