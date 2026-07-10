@@ -238,7 +238,7 @@
 }
 
 .landing-cubik .collections__wrapper {
-    margin: 0 -1rem;
+    margin: 0;
 }
 
 .landing-cubik .swiper-collections {
@@ -579,8 +579,7 @@
     }
 
     .landing-cubik .collections__wrapper {
-        margin-left: calc(-1 * var(--page-gutter));
-        margin-right: calc(-1 * var(--page-gutter));
+        margin-inline: 0;
     }
 
     .landing-cubik .swiper-collections .swiper-slide {

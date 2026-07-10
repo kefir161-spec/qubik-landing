@@ -34,38 +34,34 @@ function initEmbedMode() {
 
     let lastSent = 0;
     let timer = null;
+    let sentCount = 0;
 
     const notifyHeight = () => {
+        if (sentCount >= 2) return;
         const height = measureEmbedHeight();
-        if (height < 320 || Math.abs(height - lastSent) < 2) return;
+        if (height < 800 || height > 12000 || Math.abs(height - lastSent) < 2) return;
         lastSent = height;
+        sentCount += 1;
         window.parent.postMessage({ type: 'qubik-landing:resize', height }, '*');
     };
 
     const scheduleNotify = () => {
         clearTimeout(timer);
-        timer = setTimeout(notifyHeight, 120);
+        timer = setTimeout(notifyHeight, 150);
     };
 
     embedResizeState = { scheduleNotify, notifyHeight };
 
-    scheduleNotify();
-    window.addEventListener('load', scheduleNotify);
+    window.addEventListener('load', () => {
+        scheduleNotify();
+        setTimeout(notifyHeight, 500);
+    });
 
     document.querySelectorAll('img, video').forEach((media) => {
         if (media.complete) return;
         media.addEventListener('load', scheduleNotify, { once: true });
         media.addEventListener('loadeddata', scheduleNotify, { once: true });
     });
-
-    if (typeof ResizeObserver !== 'undefined') {
-        const root = document.querySelector('.page__container');
-        if (root) {
-            const observer = new ResizeObserver(scheduleNotify);
-            observer.observe(root);
-            root.querySelectorAll(':scope > *').forEach((section) => observer.observe(section));
-        }
-    }
 }
 
 function refreshEmbedHeight() {
@@ -383,6 +379,6 @@ if (typeof ResizeObserver !== 'undefined') {
 mountFaq();
 initHeadVideo();
 initNavBurger();
-refreshEmbedHeight();
-setTimeout(refreshEmbedHeight, 600);
-setTimeout(refreshEmbedHeight, 2000);
+window.addEventListener('load', () => {
+    setTimeout(refreshEmbedHeight, 300);
+});

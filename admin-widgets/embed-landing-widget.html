@@ -1,16 +1,13 @@
 <!--
-    Виджет встраивания лендинга Cubik на всю ширину экрана.
+    Виджет встраивания лендинга Cubik.
     Скопируйте всё содержимое в HTML-блок админки.
-
-    Работает даже если CMS вырезает <script>: iframe стартует с запасом по высоте.
-    Со скриптом высота подгоняется точно под контент.
 -->
 <div class="cb-embed" data-cb-embed>
     <iframe
         class="cb-embed__frame"
         src="https://kefir161-spec.github.io/qubik-landing/?embed=1"
         title="Cubik — модульная система"
-        scrolling="yes"
+        scrolling="no"
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
         allowfullscreen
@@ -25,10 +22,8 @@
         max-width: 100vw;
         margin-left: -50vw;
         margin-right: -50vw;
-        margin-top: 0;
-        margin-bottom: 0;
         padding: 0;
-        overflow: visible;
+        overflow: hidden;
         background: #f7fbfa;
         box-sizing: border-box;
     }
@@ -46,16 +41,17 @@
 
 <script>
     (function () {
-        var root = document.querySelector('[data-cb-embed]');
-        if (!root) return;
-
-        var frame = root.querySelector('.cb-embed__frame');
+        var frame = document.querySelector('[data-cb-embed] .cb-embed__frame');
         if (!frame) return;
 
+        var applied = false;
+
         window.addEventListener('message', function (event) {
-            if (!event.data || event.data.type !== 'qubik-landing:resize') return;
+            if (event.data?.type !== 'qubik-landing:resize') return;
             var height = Number(event.data.height);
-            if (!height || height < 320 || height > 20000) return;
+            if (!height || height < 800 || height > 12000) return;
+            if (applied) return;
+            applied = true;
             frame.style.height = Math.ceil(height) + 'px';
         });
     })();
