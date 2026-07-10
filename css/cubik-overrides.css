@@ -310,6 +310,60 @@ body.landing-cubik > .page {
     line-height: 1.35;
 }
 
+/* Режим встраивания в iframe (?embed=1) */
+html.is-embed,
+html.is-embed body.landing-cubik {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+    background: #f7fbfa;
+}
+
+html.is-embed body.landing-cubik {
+    overflow-x: hidden;
+    min-height: 100%;
+}
+
+html.is-embed body.landing-cubik > .page,
+html.is-embed body.landing-cubik .page__container {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-height: 0;
+}
+
+html.is-embed .landing-cubik .discover.catalog_main {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    min-height: 100vh;
+    min-height: 100svh;
+    min-height: 100dvh;
+}
+
+html.is-embed .landing-cubik .swiper-discover,
+html.is-embed .landing-cubik .swiper-discover .swiper-wrapper,
+html.is-embed .landing-cubik .swiper-discover .swiper-slide {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    min-height: 100vh;
+    min-height: 100svh;
+    min-height: 100dvh;
+    height: auto !important;
+}
+
+html.is-embed .landing-cubik .catalog_main .discover__slide {
+    min-height: 100vh !important;
+    min-height: 100svh !important;
+    min-height: 100dvh !important;
+    width: 100%;
+}
+
 @media (min-width: 768px) and (max-width: 1023px) {
     .landing-cubik .collections {
         padding-left: clamp(1.5rem, 4vw, 2.5rem) !important;

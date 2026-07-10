@@ -24,6 +24,13 @@
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/cubik-overrides.css">
     <link rel="preload" as="image" href="assets/images/hero/prerender_11.jpg" fetchpriority="high">
+    <script>
+        (function () {
+            if (/[?&]embed(?:=|&|$)/.test(location.search) || window.self !== window.top) {
+                document.documentElement.classList.add('is-embed');
+            }
+        })();
+    </script>
 </head>
 <body class="landing-cubik">
 

@@ -1,5 +1,34 @@
 import { PRODUCTS, FACET_PRODUCTS, FAQ_ITEMS, TESTIMONIALS } from './landing-data.js';
 
+function initEmbedMode() {
+    const params = new URLSearchParams(window.location.search);
+    const embedded = params.has('embed') || window.self !== window.top;
+    if (!embedded) return;
+
+    document.documentElement.classList.add('is-embed');
+    document.body.classList.add('is-embed');
+
+    if (params.get('embed') === 'resize') {
+        const notifyHeight = () => {
+            const height = Math.max(
+                document.documentElement.scrollHeight,
+                document.body.scrollHeight,
+            );
+            window.parent.postMessage({ type: 'qubik-landing:resize', height }, '*');
+        };
+
+        notifyHeight();
+        window.addEventListener('load', notifyHeight);
+        window.addEventListener('resize', notifyHeight);
+
+        if (typeof ResizeObserver !== 'undefined') {
+            new ResizeObserver(notifyHeight).observe(document.body);
+        }
+    }
+}
+
+initEmbedMode();
+
 const swipers = [];
 
 function assetUrl(path) {
