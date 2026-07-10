@@ -372,7 +372,7 @@ html.is-embed .landing-cubik .catalog_main .discover__slide {
     max-width: none !important;
     margin: 0 !important;
     height: auto;
-    min-height: clamp(20rem, 55vw, 32rem) !important;
+    min-height: 0 !important;
     aspect-ratio: unset !important;
     align-items: flex-end;
 }
@@ -382,21 +382,30 @@ html.is-embed .landing-cubik .discover__slide > img {
     right: 0 !important;
     width: 100% !important;
     max-width: none !important;
-    object-position: center top;
+    object-position: 72% 42%;
+}
+
+html.is-embed .landing-cubik .discover__slide:after {
+    background: linear-gradient(
+        180deg,
+        rgba(24, 26, 28, 0.18) 0%,
+        rgba(24, 26, 28, 0) 28%,
+        rgba(0, 0, 0, 0.54) 100%
+    );
 }
 
 html.is-embed .landing-cubik .discover__row {
     line-height: normal;
-    padding-top: clamp(2rem, 4vw, 3rem);
+    padding-top: clamp(1.5rem, 3vw, 2.5rem);
 }
 
 @media only screen and (max-width: 767px) {
     html.is-embed .landing-cubik .catalog_main .discover__slide {
-        min-height: clamp(22rem, 92vw, 36rem) !important;
+        min-height: 0 !important;
     }
 
     html.is-embed .landing-cubik .discover__slide > img {
-        object-position: 62% center;
+        object-position: 62% 50%;
     }
 
     html.is-embed .landing-cubik .discover_desc_mob {

@@ -54,10 +54,26 @@
             if (!embed) return;
             var header = document.querySelector('.header, .header_new, header');
             if (!header) return;
-            var gap = embed.getBoundingClientRect().top - header.getBoundingClientRect().bottom;
-            if (gap > 1 && gap < 160) {
-                embed.style.setProperty('--cb-header-gap', Math.round(gap) + 'px');
+
+            var node = embed.parentElement;
+            while (node && node !== document.body) {
+                if (parseFloat(getComputedStyle(node).paddingTop) > 0) {
+                    node.style.paddingTop = '0';
+                }
+                node = node.parentElement;
             }
+
+            var gap = embed.getBoundingClientRect().top - header.getBoundingClientRect().bottom;
+            if (gap > 0 && gap < 240) {
+                embed.style.setProperty('--cb-header-gap', Math.round(gap) + 'px');
+            } else if (gap <= 0) {
+                embed.style.setProperty('--cb-header-gap', '0px');
+            }
+        }
+
+        function scheduleGapFix() {
+            removeHeaderGap();
+            requestAnimationFrame(removeHeaderGap);
         }
 
         window.addEventListener('message', function (event) {
@@ -69,8 +85,11 @@
             frame.style.height = Math.ceil(height) + 'px';
         });
 
-        removeHeaderGap();
-        window.addEventListener('load', removeHeaderGap);
-        window.addEventListener('resize', removeHeaderGap);
+        scheduleGapFix();
+        window.addEventListener('load', scheduleGapFix);
+        window.addEventListener('resize', scheduleGapFix);
+        frame.addEventListener('load', scheduleGapFix);
+        setTimeout(scheduleGapFix, 300);
+        setTimeout(scheduleGapFix, 1200);
     })();
 </script>
