@@ -364,6 +364,22 @@ html.is-embed .landing-cubik .catalog_main .discover__slide {
     width: 100%;
 }
 
+html.is-embed .landing-cubik .collections,
+html.is-embed .landing-cubik .creativity,
+html.is-embed .landing-cubik .catalog__wrapper,
+html.is-embed .landing-cubik .details__box,
+html.is-embed .landing-cubik .post,
+html.is-embed .landing-cubik .footer,
+html.is-embed .landing-cubik .cb-hv {
+    width: 100% !important;
+    max-width: none !important;
+    box-sizing: border-box;
+}
+
+html.is-embed .landing-cubik .cb-hv__inner {
+    max-width: none !important;
+}
+
 @media (min-width: 768px) and (max-width: 1023px) {
     .landing-cubik .collections {
         padding-left: clamp(1.5rem, 4vw, 2.5rem) !important;
