@@ -1,8 +1,40 @@
 <!--
     Виджет встраивания лендинга Cubik.
-    Скопируйте всё содержимое в HTML-блок админки.
-    У блока в админке уберите верхний/боковой padding, если останется зазор.
+    Скопируйте ВСЁ содержимое в HTML-блок админки.
+
+    В админке у блока: padding = 0, margin сверху = 0.
 -->
+<style>
+    html,
+    body {
+        overflow-x: clip !important;
+    }
+
+    .cb-embed {
+        display: block;
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        padding: 0 !important;
+        overflow: hidden;
+        background: #f7fbfa;
+        box-sizing: border-box;
+    }
+
+    .cb-embed__frame {
+        display: block;
+        width: 100%;
+        height: 8600px;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: 0;
+        background: #f7fbfa;
+        vertical-align: top;
+    }
+</style>
+
 <div class="cb-embed" data-cb-embed>
     <iframe
         class="cb-embed__frame"
@@ -14,31 +46,6 @@
         allowfullscreen
     ></iframe>
 </div>
-
-<style>
-    .cb-embed {
-        display: block;
-        width: 100%;
-        max-width: 100%;
-        margin: 0 !important;
-        padding: 0 !important;
-        overflow: hidden;
-        background: #f7fbfa;
-        box-sizing: border-box;
-    }
-
-    .cb-embed__frame {
-        display: block;
-        width: 100%;
-        max-width: 100%;
-        height: 8600px;
-        margin: 0 !important;
-        padding: 0 !important;
-        border: 0;
-        background: #f7fbfa;
-        vertical-align: top;
-    }
-</style>
 
 <script>
     (function () {

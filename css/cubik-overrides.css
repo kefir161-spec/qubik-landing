@@ -339,7 +339,7 @@ html.is-embed body.landing-cubik .page__container {
     margin: 0 !important;
     padding: 0 !important;
     width: 100% !important;
-    max-width: 100% !important;
+    max-width: none !important;
     min-height: 0;
 }
 
@@ -350,7 +350,7 @@ html.is-embed .landing-cubik .page__container > *:first-child {
 
 html.is-embed .landing-cubik .discover.catalog_main {
     width: 100% !important;
-    max-width: 100% !important;
+    max-width: none !important;
     margin: 0 !important;
     padding: 0 !important;
     overflow: hidden;
@@ -360,7 +360,7 @@ html.is-embed .landing-cubik .swiper-discover,
 html.is-embed .landing-cubik .swiper-discover .swiper-wrapper,
 html.is-embed .landing-cubik .swiper-discover .swiper-slide {
     width: 100% !important;
-    max-width: 100% !important;
+    max-width: none !important;
     margin: 0 !important;
     padding: 0 !important;
     height: auto !important;
@@ -369,12 +369,18 @@ html.is-embed .landing-cubik .swiper-discover .swiper-slide {
 
 html.is-embed .landing-cubik .catalog_main .discover__slide {
     min-height: 0 !important;
-    width: 100%;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
     height: auto;
     aspect-ratio: 5475 / 1397;
 }
 
 html.is-embed .landing-cubik .discover__slide > img {
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
     object-position: center top;
 }
 
